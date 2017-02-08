@@ -1,0 +1,40 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yifu.nightcinema.fragments.TryFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/fragment_cycle_viewpager_content"
+            android:name="com.yifu.nightcinema.view.CycleViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="180dip" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/xl_color_666666" />
+
+        <com.yifu.nightcinema.view.ScrollGridView
+            android:id="@+id/frg_gl_try"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="2"
+            android:horizontalSpacing="2dp"
+            />
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="channel_category_table">
+        <item>激情视频</item>
+        <item>最新大片</item>
+        <item>伦理影片</item>
+        <item>美女图库</item>
+        <item>劲爆热舞</item>
+        <item>少女自拍</item>
+        <item>午夜影院</item>
+    </string-array>
+    <string-array name="search_video_keys">
+        <item>泰囧</item>
+        <item>王的盛宴</item>
+        <item>朝九晚五</item>
+        <item>苍井空</item>
+        <item>龙珠</item>
+        <item>大张伟</item>
+        <item>黄渤</item>
+        <item>敢死队</item>
+        <item>刘德华</item>
+        <item>一九四二</item>
+        <item>百变大咖秀</item>
+    </string-array>
+    <string-array name="search_img_keys">
+        <item>图片</item>
+        <item>写真</item>
+        <item>宅男女神</item>
+        <item>钟欣桐</item>
+        <item>黑丝</item>
+        <item>美女</item>
+        <item>极品车模</item>
+        <item>学妹</item>
+        <item>苍井空</item>
+        <item>美少女</item>
+        <item>杨幂</item>
+        <item>超级胸器</item>
+    </string-array>
+</resources>

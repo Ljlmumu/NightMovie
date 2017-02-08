@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">爱玩影音</string>
+    <string name="pay_title">客服QQ1804825779</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_wxpay_entry">WXPayEntryActivity</string>
+    <string name="app_tip">提示</string>
+    <string name="getting_prepayid">正在获取预支付订单...</string>
+    <string name="get_prepayid_fail">获取prepayid失败</string>
+    <string name="get_prepayid_succ">获取prepayid成功</string>
+    <string name="title_activity_pay">PayActivity</string>
+    <string name="pay_success">支付成功</string>
+    <string name="pay_error">支付失败</string>
+    <string name="waiting">正在支付请等待！</string>
+    <string name="pay_current_account">当前帐户:</string>
+    <string name="pay_purchase_item">所购道具</string>
+    <string name="pay_commodityname">商品名称:</string>
+    <string name="pay_payamount">支付金额:</string>
+    <string name="tip_card_recharge_price">%s元</string>
+    <string name="xl_last_pay_mode">推荐支付方式</string>
+    <string name="xl_other_pay_mode">其他支付方式</string>
+    <string name="xl_payemnt_dialog_cc">客服：4006-555-266</string>
+    <string name="channel_alipay">支付宝</string>
+    <string name="dialog_discount">八折</string>
+    <string name="dialog_confirmexit">确认退出?</string>
+    <string name="xl_btn_string_return">返回</string>
+    <string name="xl_dialog_string_close">关闭</string>
+    <string name="channel_tencentmm">微信支付</string>
+    <string name="payment_not_finish_tip">道具尚未完成购买,您将不能拥有该道具,无法获得极致游戏体验。</string>
+    <string name="dialog_try_otherpay">尝鲜其他支付方式</string>
+    <string name="loading">加载中,请稍后...</string>
+    <string name="text">dpi</string>
+    <string name="btn_app_exit">退出应用</string>
+    <string name="pull_to_refresh_release_label">松开后刷新</string>
+    <string name="pull_to_refresh_refreshing_label">刷新…</string>
+    <string name="pull_to_refresh_footer_release_label">松开后加载</string>
+    <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中…</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="shengji_member">升级会员</string>
+    <string name="seek_buy">进度条</string>
+    <string name="heijin_look_buy">试看结束,开通会员无限制观看!</string>
+    <string name="search_keywork_nul">请输入搜索内容</string>
+    <string name="search_edit_hint">输入你想查看的关键词</string>
+    <string name="search_hot">热门搜索</string>
+    <string name="search_history">搜索记录</string>
+    <string name="search_hot_video">热门视频</string>
+    <string name="search_btn">搜索</string>
+    <string name="clear_search_history">清空搜索记录</string>
+    <string name="loadmore_label">加载更多</string>
+    <string name="loading_label">正在加载....</string>
+    <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+    <string name="image_url">Image Url</string>
+    <string name="request_timeout">请求超时</string>
+    <string name="request_unconnect">网络连接失败</string>
+    <string name="network_connect">网络重新连接</string>
+    <string name="network_disconnect">网络断开</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="xlistview_footer_hint_newest">已经是最后一页</string>
+    <string name="prompt">提示</string>
+    <string name="prompt123">提示123</string>
+    <string name="specificFieldsList_title" />
+    <string name="xlistview_footer_hint_more">拼命加载中.....</string>
+    <string name="app_exit">确认退出程序?</string>
+    <string name="app_exit_template_verification_pwd">请输入密码退出！</string>
+    <string name="lianliankan_title">连连看</string>
+    <string name="remount_app_bar">推荐</string>
+    <string name="my_bar">我的</string>
+    <string name="update_version_dialog_msg">请升级到最新版本</string>
+    <string name="update_version_comple">为不影响你的使用,请更新为最新版本!!!</string>
+    <string name="update_version">为了你的更好使用,我们提供的更好的版本,请更新为最新版本!!!</string>
+    <string name="version_update_prompt">版本更新</string>
+    <string name="please_input_content">请输入内容！</string>
+    <string name="loading_error">加载失败!</string>
+    <string name="video_player_error">视屏播放失败，播放下一个</string>
+    <string name="net_un_connect_exit">"无法连接网络,请检查网络配置
+点击确定退出程序"</string>
+    <string name="request_error">数据获取失败</string>
+    <string name="paying">操作中,请稍后...</string>
+    <string name="net_un_connect">无法连接到网络,请检查网络配置...</string>
+    <string name="loading_sp">检测中,请稍后...</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="sdcard_error_title">SD卡错误</string>
+    <string name="sdcard_error_content">SD卡不可用,SD卡不存在或正与PC连接.</string>
+    <string name="sdcard_download_error_content">不能下载更新:SD卡不可用,SD卡不存在或正与PC连接.</string>
+    <string name="apk_update_progress">下载进度 %d</string>
+    <string name="find_bar">发现</string>
+    <string name="home_page">体验区</string>
+    <string name="programe_detail">节目详情</string>
+    <string name="special_bar">成人区</string>
+    <string name="zuanshi_bar">钻石区</string>
+    <string name="huangjin_bar">无码区</string>
+    <string name="heijin_bar">黑金未付区</string>
+    <string name="heijin_payed">黑金已付区</string>
+    <string name="vip_bar">图库</string>
+    <string name="video_plater_page">播放页面</string>
+    <string name="tuku_detail_bar">图库详情</string>
+    <string name="boutique_bar">精品</string>
+    <string name="albume_text">专辑</string>
+    <string name="programe_more">更多</string>
+    <string name="timer_back">30</string>
+    <string name="player_remmount">精品推荐</string>
+    <string name="meinvkefu_tag">美女客服</string>
+    <string name="player_history">播放记录</string>
+    <string name="video_detail">节目详情</string>
+    <string name="user_comment">用户留言</string>
+    <string name="heijinqu_tag">黄金区</string>
+    <string name="about_uesr">关于我们</string>
+    <string name="luntan_bar">VR区</string>
+    <string name="cili_bar">黑钻区</string>
+    <string name="agreement_user">用户协议</string>
+    <string name="appstore_bar">精品推荐</string>
+    <string name="customer_hotline">客服热线</string>
+    <string name="gratia_package">恭喜获得特惠礼包</string>
+    <string name="customer_QQ">"客服QQ:1320513495
+ 工作时间:10:00————18:00"</string>
+    <string name="explain_tag">"注:会员可享受语音视频服务哦
+ ps:加客服时请备注您的账号+遇到的问题"</string>
+    <string name="huangjin_explain">"尊敬的黄金会员您好～～～
+不知黄金会员给您带来的激情体验您满意么?
+小喵偷偷告诉您钻石会员区才是最刺激的哟!!～～
+并且升级钻石会员你可以加小喵的私人QQ哟～
+可以跟小喵一对一语音视频服务哟～～"</string>
+    <string name="zuanshi_explain">"尊敬的钻石会员您好～～～
+不知钻石会员给您带来的激情体验您满意么?
+小喵偷偷告诉您黑金会员区才是最刺激的哟!!～～
+并且升级黑金会员你可以加小喵的私人QQ哟～
+可以跟小喵一对一语音视频服务哟～～"</string>
+    <string name="member_pay_title">会员大礼包</string>
+    <string name="member_pay_year_title">年会员</string>
+    <string name="vip_libao_title">VIP大礼包</string>
+    <string name="vip_pay_title">VIP</string>
+    <string name="member_pay_long_title">终身会员</string>
+    <string name="pay_clear">用户取消支付！</string>
+    <string name="pay_weixin">微信</string>
+    <string name="pay_zhifubao">支付宝</string>
+    <string name="pay_yinlian">银联</string>
+    <string name="feedBack_edit_hint">请填写信息</string>
+    <string name="feedBack_name_text">您的姓名</string>
+    <string name="feedBack_tel_text">联系方式</string>
+    <string name="feedBack_address_text">奖品邮寄地址（含邮编）</string>
+    <string name="feedBack_text1">答题结束，请填写您的相关信息，以便为您发放奖励，感谢您的参与</string>
+    <string name="feedBack_text2">发放奖品将以您填写的信息为准，请认真填写哦！</string>
+    <string name="user_agreement">"　97涩涩免责声明
+　1、一切移动客户端用户在下载并浏览97涩涩软件时均被视为已经仔细阅读本条款并完全同意。凡以任何方式登陆本APP，或直接、间接使用本APP资料者，均被视为自愿接受本网站相关声明和用户服务协议的约束。 
+　2、97涩涩转载的内容并不代表97涩涩之意见及观点，也不意味着本APP赞同其观点或证实其内容的真实性。 
+　3、97涩涩转载的文字、图片、音视频等资料均由本APP用户提供，其真实性、准确性和合法性由信息发布人负责。97涩涩不提供任何保证，并不承担任何法律责任。 
+　4、97涩涩所转载的文字、图片、音视频等资料，如果侵犯了第三方的知识产权或其他权利，责任由作者或转载者本人承担，本APP对此不承担责任。 
+　5、97涩涩不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时，对于该外部链接指向的不由97涩涩实际控制的任何网页上的内容，97涩涩不承担任何责任。 
+　6、用户明确并同意其使用97涩涩网络服务所存在的风险将完全由其本人承担；因其使用97涩涩网络服务而产生的一切后果也由其本人承担，97涩涩对此不承担任何责任。 
+　7、除97涩涩注明之服务条款外，其它因不当使用本APP而导致的任何意外、疏忽、合约毁坏、诽谤、版权或其他知识产权侵犯及其所造成的任何损失，97涩涩概不负责，亦不承担任何法律责任。 
+　8、对于因不可抗力或因黑客攻击、通讯线路中断等97涩涩不能控制的原因造成的网络服务中断或其他缺陷，导致用户不能正常使用97涩涩，97涩涩不承担任何责任，但将尽力减少因此给用户造成的损失或影响。 
+　9、本声明未涉及的问题请参见国家有关法律法规，当本声明与国家有关法律法规冲突时，以国家法律法规为准。 
+　10、本网站相关声明版权及其修改权、更新权和最终解释权均属97涩涩所有。"</string>
+    <string name="channel_tag">渠道号</string>
+    <string name="service_tag">服务器地址</string>
+    <string name="life_m">元/终身</string>
+    <string name="year_m">元/包年</string>
+    <string name="money_tag">元</string>
+    <string name="vip_m">元/VIP</string>
+    <string name="minute_before">分钟前</string>
+    <string name="house_before">小时前</string>
+    <string name="update_video_name">标题</string>
+    <string name="update_video_detail">简介:</string>
+    <string name="update_video_name_hint">为这个视频起个名字吧...</string>
+    <string name="update_video_detail_hint">描述下这个视频吧...</string>
+    <string name="update_video_classification">分类:</string>
+    <string name="update_video_icon">视频封面</string>
+    <string name="update_pic_icon">图片封面</string>
+    <string name="update_video_classification_tag">请选择视频所属分类</string>
+    <string name="update_video_btn">发布</string>
+    <string name="update_video_explain">上传视频,即表示已同意上传服务条款,请勿上传色情及反动违法视频</string>
+    <string name="update_video_info">视频信息</string>
+    <string name="update_pic_info">图片信息</string>
+    <string name="update_video_updateing">正在上传中</string>
+    <string name="update_video_success">上传成功</string>
+    <string name="update_video_error">上传失败</string>
+    <string name="update_video">上传内容</string>
+    <string name="update_video_title">视屏上传</string>
+    <string name="upload_remove_dialog_tag">是否删除选中内容?</string>
+    <string name="upload_detail_dialog_tag">是否放弃已选择上传内容?</string>
+    <string name="upload_remove_tag_no_select">未选择需要删除的视频</string>
+    <string name="upload_video_classification_title1">原创</string>
+    <string name="upload_video_classification_title2">生活</string>
+    <string name="upload_video_classification_title3">搞笑</string>
+    <string name="upload_video_classification_title4">微电影</string>
+    <string name="upload_video_classification_title5">脱口秀</string>
+    <string name="upload_video_classification_title6">教育</string>
+    <string name="upload_video_classification_title7">动漫</string>
+    <string name="upload_video_classification_title8">片花</string>
+    <string name="upload_video_classification_title9">自拍</string>
+    <string name="upload_video_classification_title10">电影</string>
+    <string name="upload_video_classification_title11">公益</string>
+    <string name="upload_video_classification_title12">游戏</string>
+    <string name="upload_pic_classification_title1">历史</string>
+    <string name="upload_pic_classification_title2">生活</string>
+    <string name="upload_pic_classification_title3">搞笑</string>
+    <string name="upload_pic_classification_title4">人文景观</string>
+    <string name="upload_pic_classification_title5">时尚</string>
+    <string name="upload_pic_classification_title6">教育</string>
+    <string name="upload_pic_classification_title7">动漫</string>
+    <string name="upload_pic_classification_title8">旅游</string>
+    <string name="upload_pic_classification_title9">自拍</string>
+    <string name="upload_pic_classification_title10">游戏</string>
+    <string name="upload_pic_classification_title11">公益</string>
+    <string name="upload_pic_classification_title12">其他</string>
+    <string name="uploading_tag">正在上传</string>
+    <string name="upload_complate_tag">上传完成</string>
+    <string name="upload_complate_toast">文件已上传完成</string>
+    <string name="upload_error_tag">上传失败</string>
+    <string name="upload_wait_tag">已暂停</string>
+    <string name="upload_examine_tag">审核中</string>
+    <string name="upload_file_delete">文件已被删除</string>
+    <string name="upload_video_uploaded">视频已经存在</string>
+    <string name="upload_video_start">开始上传</string>
+    <string name="select_upload_file">请选择一个要上传的文件</string>
+    <string name="install_file_not">请安装文件管理器</string>
+    <string name="select_classification">选择分类</string>
+    <string name="select_file_statue_tag">选择内容类型</string>
+    <string name="upload_video_type_tag">视频</string>
+    <string name="upload_pic_type_tag">图片</string>
+    <string name="well_received_pager">热映</string>
+    <string name="channel_pager">频道</string>
+    <string name="account_num">132854782</string>
+    <string name="pwd_num">guest_4243598268</string>
+    <string name="huangjin_name">黄金会员</string>
+    <string name="zuanshi_name">钻石会员</string>
+    <string name="heijin_name">黑金会员</string>
+    <string name="huangjin_detail">上百部成人大片永久体验</string>
+    <string name="zuanshi_detail">所有大片无线看(定期更新)</string>
+    <string name="heijin_detail">享受所有电影及图库</string>
+    <string name="present_price_heijin">现仅需:%1$s元</string>
+    <string name="present_money">¥%1$s.00</string>
+    <string name="present_price">%1$s元</string>
+    <string name="original_price">原价:%1$s元</string>
+    <string name="current_price">当前套餐:%1$s 金额:%2$s元</string>
+    <string name="video_tag">当前片库: ≈3000部</string>
+    <string name="luntan_zaixian_tag">当前在线:868</string>
+    <string name="luntan_member_tag">会员总计:7986</string>
+    <string name="discount_tag">恭喜获得%1$s折优惠</string>
+    <string name="buy_member">需要会员才可观看VIP区电影</string>
+    <string name="buy_zuanshi">购买钻石会员观看钻石区影片</string>
+    <string name="buy_heijin">购买黑金会员享受所有影片及图库</string>
+    <string name="buy_vip_prompt_bottom">购买VIP,万部精彩视频等你看</string>
+    <string name="tuku_pay_member_not">非VIP会员只可体验前3部</string>
+    <string name="tuku_pay_zuanshi_not">非钻石会员只可体验前5部</string>
+    <string name="tuku_pay_heijin_not">非黑金会员只可体验前7部</string>
+    <string name="tuku_detail_pay_member_not">非VIP会员只可看前5页</string>
+    <string name="tuku_detail_pay_zuanshi_not">非钻石会员只可看前5页</string>
+    <string name="tuku_detail_pay_heijin_not">非黑金会员只可看前5页</string>
+    <string name="exit_tishi">再按一次退出程序</string>
+    <string name="sp_huangjin_price">警告：本软件含有激情内容，未成年人请自觉离开！如权利人认为本软件内容中所涉及的文字作品，图片和影视频资料（以下简称“作品”）侵犯其著作权的，请及时 书面通知我方，我方将依法删除被指侵权的作品或断开相应的链接，本软件包含网络热播，欧美日韩微视频，海内外最新激情大片，港台伦理电影，更有超丰富海量无码高清图库 ，现只需【%1$s】元即可成为注册会员，永久免费观看海量禁播私货，还有午夜激情私密频道等着你信息费由合作伙伴代为收取，成功后运营商会发送短信通知。</string>
+    <string name="sp_zuanshi_price">喜您获得优惠体验资格，海量美女偷拍，自拍视频，各类激情小电影，伦理大片，火爆娱乐八卦专题，性感女星高清无码私密写真图库等海量资源， 更有会员专享午夜私密频道不定期放送，活动期间仅需【%1$s】元即可获得30天会员资格，机会难得，请勿错过</string>
+    <string name="pay_info">*购买会员后如果有任何问题请联系我们的在线客服</string>
+    <string name="search_cili_tag">磁力链接:%1$s</string>
+    <string name="search_file_size_tag">文件大小:%1$s</string>
+    <string name="vip_tankuang_tag">第%1$s位会员充值成功!</string>
+    <string name="search_tag_default">处女</string>
+    <string name="comment_tag">评论</string>
+    <string name="buy_pay_hungajin">请升级成为黄金会员开放更多影片资源</string>
+    <string name="buy_pay_zuanshi">请升级成为钻石会员开放更多影片资源</string>
+    <string name="huangjin_pay_tag">开通永久会员</string>
+    <string name="zuanshi_pay_tag">开通钻石会员</string>
+    <string name="heijin_pay_tag">解锁所有视频</string>
+    <string name="pay_success_huangjin_tag">恭喜您成为VIP会员!</string>
+    <string name="pay_success_zuanshi_tag">恭喜您成为钻石会员!</string>
+    <string name="pay_success_heijin_tag">恭喜您解锁所有视频!</string>
+    <string name="huangjin_pay_desc">海量完整成人视频永久观看权限</string>
+    <string name="zuanshi_pay_desc">海量完整成人视频永久观看权限</string>
+    <string name="heijin_pay_desc">最后一步仅%1$s元解锁全部视频</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_player">PlayerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

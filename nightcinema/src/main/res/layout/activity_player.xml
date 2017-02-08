@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.yifu.nightcinema.view.VideoView
+        android:id="@+id/video_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true" />
+
+    <ImageView
+        android:id="@+id/vp_iv_mark1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="0.0dip"
+        android:src="@drawable/watermark"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/vp_iv_mark2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="0.0dip"
+        android:src="@drawable/watermark"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/gold_iv_mark3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/zuan_mark"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/videoPlayImg"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_centerInParent="true"
+        android:src="@drawable/video_box_play"
+        android:visibility="invisible"
+        />
+
+    <ImageView
+        android:id="@+id/gold_iv_mark4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/zuan_mark"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/player_top_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/space_80px"
+        android:layout_alignParentTop="true" >
+
+        <RelativeLayout
+            android:id="@+id/frame_player_view_back"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_60px"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space_15px"
+            android:paddingRight="@dimen/space_20px" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/space_10px"
+                android:layout_marginLeft="@dimen/space_15px"
+                android:layout_marginTop="@dimen/space_10px"
+                android:background="@drawable/settings_headback" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/frame_player_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/public_textsize_32px"
+            android:text="title"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/videoControllerLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#cc282828"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="3.0dip"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/videoPauseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip" >
+
+            <ImageView
+                android:id="@+id/videoPauseImg"
+                android:layout_width="22.0dip"
+                android:layout_height="22.0dip"
+                android:background="@android:drawable/ic_media_pause"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="horizontal"
+            android:paddingRight="0.0dip" >
+
+            <SeekBar
+                android:id="@+id/videoSeekBar"
+                style="@android:style/Widget.Holo.SeekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" />
+
+            <TextView
+                android:id="@+id/videoCurTime"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="@dimen/space_10px"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="#ffffffff"
+                android:textSize="12.0dip" />
+
+            <TextView
+                android:id="@+id/video_tishi_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/space_10px"
+                android:background="@drawable/btn_red"
+                android:gravity="center"
+                android:text="立即升级会员观看完整版本"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/textsizes_18px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/screen_status_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/screen_status_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/frame_player_loading"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/loading_pay_style"
+        android:indeterminateOnly="true"
+         />
+
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="tab_button_normal">#ffffffff</item>
+    <item type="drawable" name="tab_button_pressed">#ff333333</item>
+    <item type="drawable" name="black">#ff000000</item>
+    <item type="drawable" name="transparent">#00000000</item>
+    <item type="drawable" name="app_download_list_item_press">#ff111111</item>
+    <item type="drawable" name="app_download_list_item_normal">#ff181818</item>
+    <item type="drawable" name="btn_normal">#ff4dbff8</item>
+    <item type="drawable" name="btn_focus">#ff2ea4e4</item>
+    <item type="drawable" name="progress_color">#ff3b9f22</item>
+    <item type="drawable" name="list_item_normal">#ffefeff4</item>
+    <item type="drawable" name="list_item_press">#ffd7d7d8</item>
+</resources>
