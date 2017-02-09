@@ -151,22 +151,36 @@
                     android:name="yfsdk_business_channel"
                     android:value="AWYA"/>
         -->
-        <meta-data
+     <!--   <meta-data
             android:name="yfsdk_appid"
             android:value="1030" />
-        <!-- appkey -->
+        &lt;!&ndash; appkey &ndash;&gt;
         <meta-data
             android:name="yfsdk_appkey"
             android:value="Z36ikGXSjvq6OGIW7BRW5FbG" />
-        <!-- appsecret -->
+        &lt;!&ndash; appsecret &ndash;&gt;
         <meta-data
             android:name="yfsdk_appsecret"
             android:value="fIkRdhEwcdf6nlYRaaGtuOlGx7MlW1R9" />
+        &lt;!&ndash; 商户号 &ndash;&gt;
+        <meta-data
+            android:name="yfsdk_business_channel"
+            android:value="AWYC" />-->
+        <meta-data
+            android:name="yfsdk_appid"
+            android:value="1035" />
+        <!-- appkey -->
+        <meta-data
+            android:name="yfsdk_appkey"
+            android:value="XgzOEHAX0kXBAdp382wmU7l3 " />
+        <!-- appsecret -->
+        <meta-data
+            android:name="yfsdk_appsecret"
+            android:value="aenqkLYRjyaUmW3vJWhjgOGjWSxeVkeW" />
         <!-- 商户号 -->
         <meta-data
             android:name="yfsdk_business_channel"
-            android:value="AWYC" />
-
+            android:value="AWYD" />
         <!--
         <meta-data
             android:name="yfsdk_appid"
