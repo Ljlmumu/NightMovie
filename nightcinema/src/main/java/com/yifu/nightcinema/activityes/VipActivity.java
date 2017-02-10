@@ -17,7 +17,7 @@ private TextView btn_goPay;
 private TextView tv_dele_price;
     private ImageView member_close;
 
-    int fee = 29;
+    int fee = 39;
     String del_fee = "￥78";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

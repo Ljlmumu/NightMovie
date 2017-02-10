@@ -3,89 +3,36 @@
     package="com.yifu.nightcinema">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.webkit.permission.PLUGIN" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission android:name="cn.swiftpass.wxpay.permission.MMOAUTH_CALLBACK" />
     <uses-permission android:name="cn.swiftpass.wxpay.permission.MM_MESSAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="xvtian.gai.receiver" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -133,76 +80,78 @@
 
         <!-- sdk -->
 
+        <!-- <meta-data
+             android:name="yfsdk_appid"
+             android:value="1028" />
+         &lt;!&ndash; appkey &ndash;&gt;
+         <meta-data
+             android:name="yfsdk_appkey"
+             android:value="6Eiyx0QVD2KAo4u1VCyKV04p" />
+         &lt;!&ndash; appsecret &ndash;&gt;
+         <meta-data
+             android:name="yfsdk_appsecret"
+             android:value="Lxsq6V8RdgyrTcg4IQTFJMyh8mCXo3ye" />
+         &lt;!&ndash; 商户号 &ndash;&gt;
+         <meta-data
+             android:name="yfsdk_business_channel"
+             android:value="AWYA" />-->
 
-        <!--
-                 <meta-data
-                    android:name="yfsdk_appid"
-                    android:value="1028" />
-                &lt;!&ndash; appkey &ndash;&gt;
-                <meta-data
-                    android:name="yfsdk_appkey"
-                    android:value="6Eiyx0QVD2KAo4u1VCyKV04p" />
-                &lt;!&ndash; appsecret &ndash;&gt;
-                <meta-data
-                    android:name="yfsdk_appsecret"
-                    android:value="Lxsq6V8RdgyrTcg4IQTFJMyh8mCXo3ye" />
-                &lt;!&ndash; 商户号 &ndash;&gt;
-                <meta-data
-                    android:name="yfsdk_business_channel"
-                    android:value="AWYA"/>
-        -->
-     <!--   <meta-data
-            android:name="yfsdk_appid"
-            android:value="1030" />
-        &lt;!&ndash; appkey &ndash;&gt;
-        <meta-data
-            android:name="yfsdk_appkey"
-            android:value="Z36ikGXSjvq6OGIW7BRW5FbG" />
-        &lt;!&ndash; appsecret &ndash;&gt;
-        <meta-data
-            android:name="yfsdk_appsecret"
-            android:value="fIkRdhEwcdf6nlYRaaGtuOlGx7MlW1R9" />
-        &lt;!&ndash; 商户号 &ndash;&gt;
-        <meta-data
-            android:name="yfsdk_business_channel"
-            android:value="AWYC" />-->
+
+
+                   <meta-data
+                       android:name="yfsdk_appid"
+                       android:value="1030" />
+                   <!-- appkey -->
+                   <meta-data
+                       android:name="yfsdk_appkey"
+                       android:value="Z36ikGXSjvq6OGIW7BRW5FbG" />
+                   <!-- appsecret -->
+                   <meta-data
+                       android:name="yfsdk_appsecret"
+                       android:value="fIkRdhEwcdf6nlYRaaGtuOlGx7MlW1R9" />
+                   <!-- 商户号 -->
+                   <meta-data
+                       android:name="yfsdk_business_channel"
+                       android:value="AWYC" />
+
+<!--
         <meta-data
             android:name="yfsdk_appid"
             android:value="1035" />
-        <!-- appkey -->
-        <meta-data
-            android:name="yfsdk_appkey"
-            android:value="XgzOEHAX0kXBAdp382wmU7l3 " />
-        <!-- appsecret -->
-        <meta-data
-            android:name="yfsdk_appsecret"
-            android:value="aenqkLYRjyaUmW3vJWhjgOGjWSxeVkeW" />
-        <!-- 商户号 -->
-        <meta-data
-            android:name="yfsdk_business_channel"
-            android:value="AWYD" />
-        <!--
-        <meta-data
-            android:name="yfsdk_appid"
-            android:value="1029" />
         &lt;!&ndash; appkey &ndash;&gt;
         <meta-data
             android:name="yfsdk_appkey"
-            android:value="SVhxI9PuTWueqMkRgVuC1xoF" />
+            android:value="XgzOEHAX0kXBAdp382wmU7l3 " />
         &lt;!&ndash; appsecret &ndash;&gt;
         <meta-data
             android:name="yfsdk_appsecret"
-            android:value="UvWgXi8kkOcAUk6MWNCNhcVKVbdW6apB" />
+            android:value="aenqkLYRjyaUmW3vJWhjgOGjWSxeVkeW" />
         &lt;!&ndash; 商户号 &ndash;&gt;
         <meta-data
             android:name="yfsdk_business_channel"
-            android:value="AWYB" />
-        -->
+            android:value="AWYD" />-->
+
+               <!-- <meta-data
+                    android:name="yfsdk_appid"
+                    android:value="1029" />
+                &lt;!&ndash; appkey &ndash;&gt;
+                <meta-data
+                    android:name="yfsdk_appkey"
+                    android:value="SVhxI9PuTWueqMkRgVuC1xoF" />
+                &lt;!&ndash; appsecret &ndash;&gt;
+                <meta-data
+                    android:name="yfsdk_appsecret"
+                    android:value="UvWgXi8kkOcAUk6MWNCNhcVKVbdW6apB" />
+                &lt;!&ndash; 商户号 &ndash;&gt;
+                <meta-data
+                    android:name="yfsdk_business_channel"
+                    android:value="AWYB" />-->
+
+
         <!-- 推广渠道号 -->
         <meta-data
             android:name="yfsdk_rec_channel"
             android:value="13744" />
-
         <!--
           <activity
           android:name="com.ipaynow.wechatpay.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
@@ -210,8 +159,6 @@
           android:screenOrientation="behind"
           android:theme="@android:style/Theme.NoDisplay" />
         -->
-
-
         <!-- alipay -->
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
@@ -227,7 +174,7 @@
             android:theme="@style/MyDialogStyle"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".wxapi.WXPayEntryActivity"
+            android:name="com.szxj.star1.wxapi.WXPayEntryActivity"
             android:exported="true"
             android:launchMode="singleTop" />
         <!-- feikewang_start -->

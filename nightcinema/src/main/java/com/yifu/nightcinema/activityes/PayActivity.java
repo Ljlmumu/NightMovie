@@ -2,6 +2,7 @@ package com.yifu.nightcinema.activityes;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -10,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tendcloud.tenddata.TDGAVirtualCurrency;
 import com.yifu.nightcinema.R;
 import com.yifu.nightcinema.utils.Contants;
 import com.yifu.nightcinema.utils.SpUtil;
@@ -17,6 +19,10 @@ import com.yifu.platform.single.PayType;
 import com.yifu.platform.single.YFPlatform;
 import com.yifu.platform.single.callback.IYFSDKCallBack;
 import com.yifu.platform.single.item.GamePropsInfo;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 
 public class PayActivity extends Activity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
@@ -28,7 +34,7 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
     private Button pay_btn;
 
     private int payType = 0;//0weixin ,1alipay
-    int fee;
+    double fee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,20 +80,23 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
     }
 
     private void starPay() {
+        Date date = new Date(System.currentTimeMillis());
+        String orderId = new SimpleDateFormat("yyyy-MM-dd/HH:mm:ss").format(date);
+        String orderName = getString(R.string.pay_title);
 
         if (payType == 0) {//微信
+            TDGAVirtualCurrency.onChargeRequest(orderId, "永久会员", fee, "CNY", fee, "微信");
 
-                String mchOrderId = String.valueOf(System.currentTimeMillis());
-                GamePropsInfo gamePropsInfo = new GamePropsInfo(fee+"", getString(R.string.pay_title), mchOrderId);
-                YFPlatform.getInstance().invokePay(this, gamePropsInfo,
-                        PayType.TENCENTMM, callback);
+            GamePropsInfo gamePropsInfo = new GamePropsInfo(fee + "", orderName, orderId);
+            YFPlatform.getInstance().invokePay(this, gamePropsInfo,
+                    PayType.TENCENTMM, new MyCallback(orderId));
 
 
         } else if (payType == 1) {//支付宝
-            String mchOrderId = String.valueOf(System.currentTimeMillis());
-            GamePropsInfo gamePropsInfo = new GamePropsInfo(fee+"",  getString(R.string.pay_title), mchOrderId);
+            TDGAVirtualCurrency.onChargeRequest(orderId, "永久会员", fee, "CNY", fee, "支付宝");
+            GamePropsInfo gamePropsInfo = new GamePropsInfo(fee + "", orderName, orderId);
             YFPlatform.getInstance().invokePay(this, gamePropsInfo,
-                    PayType.ALIPAY, callback);
+                    PayType.ALIPAY, new MyCallback(orderId));
         }
     }
 
@@ -114,19 +123,34 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
     }
 
 
-   public void paySuccess(){
+    public void paySuccess() {
         Contants.isVip = true;
-        SpUtil.update(this,SpUtil.IS_VIP,true);
+        SpUtil.update(this, SpUtil.IS_VIP, true);
     }
 
     /**
      * 支付处理过程的结果回调函数
-     * */
-    IYFSDKCallBack callback = new IYFSDKCallBack() {
+     */
+
+
+    class MyCallback implements IYFSDKCallBack {
+        private String orderId_back;
+
+        public MyCallback() {
+        }
+
+        public MyCallback(String orderId_back) {
+            this.orderId_back = orderId_back;
+        }
+
         @Override
         public void onResponse(int code, String paramString) {
             if (code == 3) {//3成功
                 paySuccess();
+
+                Log.i("PayActivity", "success-orderID=" + orderId_back);
+             //   String payment = (payType == 0) ? "微信" : "支付宝";
+                TDGAVirtualCurrency.onChargeSuccess(orderId_back);
                 Toast.makeText(PayActivity.this, "支付成功", Toast.LENGTH_SHORT)
                         .show();
             } else {
@@ -136,6 +160,8 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
             }
 
         }
-    };
+    }
+
+    ;
 
 }

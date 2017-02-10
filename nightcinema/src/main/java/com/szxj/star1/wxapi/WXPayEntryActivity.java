@@ -1,4 +1,4 @@
-package com.szxj.star2;
+package com.szxj.star1.wxapi;
 
 import android.app.Activity;
 import android.content.Intent;

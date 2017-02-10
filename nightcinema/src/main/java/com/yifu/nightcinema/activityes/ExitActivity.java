@@ -17,7 +17,7 @@ public class ExitActivity extends Activity implements View.OnClickListener {
 private ImageView exit_iv_exit;
     private TextView exit_money;
     private ImageView exit_activity_pay_button;
-    private int fee = 19;
+    private int fee = 29;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

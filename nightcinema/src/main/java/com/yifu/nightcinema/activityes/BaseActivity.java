@@ -5,6 +5,8 @@ import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.tendcloud.tenddata.TalkingDataGA;
+
 /**
  * Created by lijilei on 2017/1/16.
  */
@@ -34,12 +36,14 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        TalkingDataGA.onResume(this);
         Log.e(TAG, "onResume()");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        TalkingDataGA.onPause(this);
         Log.e(TAG, "onPause()");
     }
 

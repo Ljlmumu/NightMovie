@@ -54,5 +54,6 @@ public class SplashActivity extends AppCompatActivity {
     private void init() {
         Contants.isVip = SpUtil.get(this,SpUtil.IS_VIP);
        YFPlatform.getInstance().init(SplashActivity.this);
+
     }
 }

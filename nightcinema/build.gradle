@@ -47,4 +47,5 @@ dependencies {
     compile 'junit:junit:4.12'
     compile project(':yfSDK_ThirdPayLib')
     compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile files('libs/Game_Analytics_SDK_Android_V3.2.18.jar')
 }
