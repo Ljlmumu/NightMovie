@@ -24,7 +24,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-
 public class PayActivity extends Activity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     private ImageView ib_vip_exit;
@@ -124,8 +123,9 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
 
 
     public void paySuccess() {
-        Contants.isVip = true;
-        SpUtil.update(this, SpUtil.IS_VIP, true);
+        Contants.VipLevel++;
+        SpUtil.updateInt(this, SpUtil.VIP_LEVEL, Contants.VipLevel);
+
     }
 
     /**
@@ -154,6 +154,7 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
                 Toast.makeText(PayActivity.this, "支付成功", Toast.LENGTH_SHORT)
                         .show();
             } else {
+               // paySuccess();
                 Toast.makeText(PayActivity.this, "支付失败", Toast.LENGTH_SHORT)
                         .show();
 

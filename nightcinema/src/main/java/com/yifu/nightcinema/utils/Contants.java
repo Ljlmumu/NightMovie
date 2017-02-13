@@ -11,5 +11,15 @@ public class Contants {
     public static final String url_wuma = "http://php7.qyjuju.com/json2/visitor3.php?pay_Id=dxabwj&package=com.usye.asjye&appid=4&page=";
     public static final String url_detail = "http://php7.qyjuju.com/json2/comments.php?id= + Dianying_id";
 
-    public static boolean isVip = false;
+//    public static boolean isVip = false;
+//    public static boolean isDiamondVip = false;
+//    public static boolean isGoldVip = false;
+    /**
+     * 0为非会员
+     * 1为永久会员
+     * 2为钻石会员
+     * 3为黑金会员
+     *
+     */
+    public static int VipLevel;
 }

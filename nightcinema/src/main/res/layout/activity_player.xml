@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:src="@drawable/zuan_mark"
+        android:src="@drawable/watermark"
         android:visibility="visible" />
 
     <ImageView
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/zuan_mark"
+        android:src="@drawable/watermark"
         android:visibility="visible" />
 
     <RelativeLayout

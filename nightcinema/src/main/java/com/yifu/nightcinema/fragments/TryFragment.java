@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -16,9 +15,9 @@ import com.yifu.nightcinema.adapter.GridviewAdapter;
 import com.yifu.nightcinema.bean.BaseBean;
 import com.yifu.nightcinema.bean.ListBean;
 import com.yifu.nightcinema.bean.VideoInfo;
+import com.yifu.nightcinema.net.VolleyUtil;
 import com.yifu.nightcinema.utils.Contants;
 import com.yifu.nightcinema.utils.ViewFactory;
-import com.yifu.nightcinema.net.VolleyUtil;
 import com.yifu.nightcinema.view.CycleViewPager;
 import com.yifu.nightcinema.view.ScrollGridView;
 
@@ -143,7 +142,7 @@ public class TryFragment extends BaseFragment {
             if (cycleViewPager.isCycle()) {
                 position = position - 1;
                 Toast.makeText(activity,
-                        "position-->" + info.getTitle(), Toast.LENGTH_SHORT)
+                         info.getTitle(), Toast.LENGTH_SHORT)
                         .show();
             }
 

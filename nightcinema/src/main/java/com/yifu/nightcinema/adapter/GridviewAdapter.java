@@ -10,8 +10,10 @@ import android.widget.TextView;
 
 import com.yifu.nightcinema.R;
 import com.yifu.nightcinema.activityes.PlayerActivity;
+import com.yifu.nightcinema.activityes.VipActivity;
 import com.yifu.nightcinema.bean.VideoInfo;
 import com.yifu.nightcinema.net.VolleyUtil;
+import com.yifu.nightcinema.utils.Contants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,14 +77,24 @@ public class GridviewAdapter extends BaseAdapter {
         holder.iv_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, PlayerActivity.class);
-                intent.putExtra("url", info.getVideo());
-                intent.putExtra("title", info.getTitle());
-                context.startActivity(intent);
+                if(Contants.VipLevel<=0){
+                    startPay();
+                }else {
+                    Intent intent = new Intent(context, PlayerActivity.class);
+                    intent.putExtra("url", info.getVideo());
+                    intent.putExtra("title", info.getTitle());
+                    context.startActivity(intent);
+                }
             }
         });
 
         return convertView;
+    }
+
+    private void startPay() {
+        Intent intent = new Intent(context, VipActivity.class);
+        context.startActivity(intent);
+
     }
 
     class ViewHolder {

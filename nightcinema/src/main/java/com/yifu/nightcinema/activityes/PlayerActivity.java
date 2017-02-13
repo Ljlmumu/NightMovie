@@ -31,7 +31,7 @@ import com.yifu.nightcinema.view.VideoView;
 
 
 public class PlayerActivity extends Activity implements View.OnClickListener {
-private final  String TAG = "PlayerActivity";
+    private final String TAG = "PlayerActivity";
     //控件
     private VideoView video_view;
     private ImageView vp_iv_mark1;
@@ -44,7 +44,7 @@ private final  String TAG = "PlayerActivity";
     private TextView videoCurTime;
     private TextView video_tishi_buy;
     private ProgressBar frame_player_loading;
-private SeekBar videoSeekBar;
+    private SeekBar videoSeekBar;
     private LinearLayout videoPauseBtn;
     private ImageView videoPauseImg;
 
@@ -60,9 +60,11 @@ private SeekBar videoSeekBar;
     private SeekBar.OnSeekBarChangeListener mOnSeekBarChangeListener;
     private Handler mHandler;
     //资源
-    private boolean isVip = Contants.isVip;
+
     private String url;
-    private String title;
+    private String title;//标题
+    private String dialogMessage = "开通会员可观看完整视频";//拖动弹出消息dialog
+    private int PayTime = 8000;//观看多长时间弹出计费，单位毫秒
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +89,7 @@ private SeekBar videoSeekBar;
         // video_view.setMediaController(new MediaController(this));
         video_view.setVideoSize(screenWidth, screenHeight);
         video_view.setVideoPath(Uri.parse(url).toString());
-       // video_view.start();
+        // video_view.start();
         startLoading(true);
         isPlay = true;
         video_view.requestFocus();
@@ -113,25 +115,25 @@ private SeekBar videoSeekBar;
     }
 
     private void createListener() {
-        mHandler = new Handler(){
+        mHandler = new Handler() {
             @SuppressLint("NewApi")
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
-switch (msg.what){
-    case 0:
-    //更新视频的进度
-        int currentPosition = (int) video_view.getCurrentPosition();
+                switch (msg.what) {
+                    case 0:
+                        //更新视频的进度
+                        int currentPosition = (int) video_view.getCurrentPosition();
 
-        videoSeekBar.setProgress(currentPosition);
+                        videoSeekBar.setProgress(currentPosition);
 //                    seekbarVideo.incrementProgressBy(1);
 
-        //设置视频的播放进度
-        int duration = (int) video_view.getDuration()*100;
-        videoSeekBar.setMax(duration);
-        videoCurTime.setText(Util.stringForTime(currentPosition)+"/"+Util.stringForTime(duration));
+                        //设置视频的播放进度
+                        int duration = (int) video_view.getDuration() * 100;
+                        videoSeekBar.setMax(duration);
+                        videoCurTime.setText(Util.stringForTime(currentPosition) + "/" + Util.stringForTime(duration));
 
-        //更新系统时间
+                        //更新系统时间
 //        tvSystemTime.setText(getSystemTime());
 
 //
@@ -146,13 +148,13 @@ switch (msg.what){
 //            seekbarVideo.setSecondaryProgress(secondaryProgress);
 //
 
-        if (!PlayerActivity.this.isDestroyed()) {
-            removeMessages(0);
-            sendEmptyMessageDelayed(0, 1000);
-        }
+                        if (!PlayerActivity.this.isDestroyed()) {
+                            removeMessages(0);
+                            sendEmptyMessageDelayed(0, 1000);
+                        }
 
-        break;
-}
+                        break;
+                }
 
             }
         };
@@ -169,8 +171,6 @@ switch (msg.what){
                 startLoading(false);
 
 
-
-
                 mHandler.sendEmptyMessage(0);
             }
         };
@@ -183,14 +183,14 @@ switch (msg.what){
         mOnInfoListener = new MediaPlayer.OnInfoListener() {
             @Override
             public boolean onInfo(MediaPlayer mp, int what, int extra) {
-                switch (what){
+                switch (what) {
                     case MediaPlayer.MEDIA_INFO_BUFFERING_START://开始卡了，拖动卡
-                        Log.e(TAG,"开始卡了，拖动卡...");
+                        Log.e(TAG, "开始卡了，拖动卡...");
 
                         startLoading(true);
                         break;
                     case MediaPlayer.MEDIA_INFO_BUFFERING_END://卡结束了，拖动卡结束了
-                        Log.e(TAG,"卡结束了，拖动卡结束了...");
+                        Log.e(TAG, "卡结束了，拖动卡结束了...");
                         startLoading(false);
                         break;
                     default:
@@ -209,11 +209,16 @@ switch (msg.what){
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (fromUser) {
-                    if(isVip){
-                    video_view.seekTo(progress);
+                    if (Contants.VipLevel >= 3) {
+                        video_view.seekTo(progress);
 
-                    }else{
+                    } else {
                         showDialog();
+                    }
+                }else {
+                    if(progress>=PayTime){
+                        startPay();
+
                     }
                 }
 
@@ -226,7 +231,7 @@ switch (msg.what){
              */
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-               // mHandler.removeMessages(HIDE_MEDIACONTROLER);
+                // mHandler.removeMessages(HIDE_MEDIACONTROLER);
 
             }
 
@@ -237,21 +242,21 @@ switch (msg.what){
              */
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-               // mHandler.sendEmptyMessageDelayed(HIDE_MEDIACONTROLER,5000);
+                // mHandler.sendEmptyMessageDelayed(HIDE_MEDIACONTROLER,5000);
             }
         };
     }
 
     private void startLoading(boolean openLoading) {
-        RotateAnimation an=new RotateAnimation(0,360, Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+        RotateAnimation an = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         an.setInterpolator(new LinearInterpolator());//不停顿  
-       an.setRepeatCount(1);//重复次数  
-       an.setFillAfter(true);//停在最后  
+        an.setRepeatCount(1);//重复次数  
+        an.setFillAfter(true);//停在最后  
         an.setDuration(1500);
-        if(openLoading){
+        if (openLoading) {
             frame_player_loading.setVisibility(View.VISIBLE);
             frame_player_loading.startAnimation(an);
-        }else{
+        } else {
             frame_player_loading.clearAnimation();
             frame_player_loading.setVisibility(View.INVISIBLE);
         }
@@ -259,10 +264,10 @@ switch (msg.what){
     }
 
 
-    public void showDialog(){
-        Dialog dialog = new AlertDialog.Builder(this).setMessage("开通会员可观看完整视频")
+    public void showDialog() {
+        Dialog dialog = new AlertDialog.Builder(this).setMessage(dialogMessage)
                 .setTitle("温馨提示")
-                .setPositiveButton("确定",new DialogInterface.OnClickListener(){
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startPay();
@@ -272,11 +277,13 @@ switch (msg.what){
 
     private void startPay() {
         this.finish();
-        Intent intent = new Intent(this,VipActivity.class);
+        Intent intent = new Intent(this, VipActivity.class);
         startActivity(intent);
     }
 
     private void initData() {
+
+
         Intent intent = getIntent();
         url = intent.getStringExtra("url");
         title = intent.getStringExtra("title");
@@ -301,17 +308,48 @@ switch (msg.what){
         videoSeekBar = (SeekBar) findViewById(R.id.videoSeekBar);
         videoPauseBtn = (LinearLayout) findViewById(R.id.videoPauseBtn);
         videoPauseImg = (ImageView) findViewById(R.id.videoPauseImg);
-        video_view.setOnClickListener(this);
-        if(isVip){
-            vp_iv_mark1.setVisibility(View.GONE);
-            vp_iv_mark2.setVisibility(View.GONE);
-            gold_iv_mark3.setVisibility(View.GONE);
-            gold_iv_mark4.setVisibility(View.GONE);
+
+
+        switch (Contants.VipLevel) {
+
+            case 1:
+                vp_iv_mark1.setImageResource(R.drawable.zuan_mark);
+                vp_iv_mark2.setImageResource(R.drawable.zuan_mark);
+                gold_iv_mark3.setImageResource(R.drawable.zuan_mark);
+                gold_iv_mark3.setImageResource(R.drawable.zuan_mark);
+                dialogMessage = "开通钻石会员可观看更多哦！";
+                PayTime = 8000;
+                break;
+            case 2:
+                vp_iv_mark1.setImageResource(R.drawable.heijin_mark);
+                vp_iv_mark2.setImageResource(R.drawable.heijin_mark);
+                gold_iv_mark3.setImageResource(R.drawable.heijin_mark);
+                gold_iv_mark3.setImageResource(R.drawable.heijin_mark);
+                dialogMessage = "开通黑金会员可观看全部高清视频哦！";
+                PayTime = 15000;
+                break;
+            case 3:
+                default:
+                    vp_iv_mark1.setVisibility(View.GONE);
+                    vp_iv_mark2.setVisibility(View.GONE);
+                    gold_iv_mark3.setVisibility(View.GONE);
+                    gold_iv_mark4.setVisibility(View.GONE);
+                break;
         }
+
+
+//        if (Contants.VipLevel >= 3) {
+//            vp_iv_mark1.setVisibility(View.GONE);
+//            vp_iv_mark2.setVisibility(View.GONE);
+//            gold_iv_mark3.setVisibility(View.GONE);
+//            gold_iv_mark4.setVisibility(View.GONE);
+//        }
+
 
 //监听退出
         frame_player_view_back.setOnClickListener(this);
         video_tishi_buy.setOnClickListener(this);
+        video_view.setOnClickListener(this);
     }
 
 
@@ -329,7 +367,7 @@ switch (msg.what){
             case R.id.video_tishi_buy:
                 startPay();
 
-                    break;
+                break;
             case R.id.video_view:
                 pause_play();
                 break;
