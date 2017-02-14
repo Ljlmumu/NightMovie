@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\MyTest\wuliao\yfSDK_ThirdPayLib\src\main\jniLibs"><file name="armeabi/libonlywechat_plugin.so" path="E:\MyTest\wuliao\yfSDK_ThirdPayLib\src\main\jniLibs\armeabi\libonlywechat_plugin.so"/><file name="armeabi/libtm_pay.so" path="E:\MyTest\wuliao\yfSDK_ThirdPayLib\src\main\jniLibs\armeabi\libtm_pay.so"/></source></dataSet><dataSet config="release"><source path="E:\MyTest\wuliao\yfSDK_ThirdPayLib\src\release\jniLibs"/></dataSet></merger>
