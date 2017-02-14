@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="activity_vertical_margin">16.0dip</dimen>
+    <dimen name="my_title_text">20sp</dimen>
+    <dimen name="main_title">50dp</dimen>
+    <dimen name="list_networkimageview">180dp</dimen>
+    <dimen name="gd_item_it_tv">10sp</dimen>
+    <dimen name="lv_item_ittv_marginTop">8dp</dimen>
+    <dimen name="lv_item_view">5dp</dimen>
+    <dimen name="lv_item_lv_ittv">10sp</dimen>
+    <dimen name="xlistview_footer_progressbar">7sp</dimen>
+    <dimen name="header_slideshowsiew">150dp</dimen>
+</resources>

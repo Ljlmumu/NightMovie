@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30.0dip">
+
+        <View
+            android:id="@id/view2"
+            android:layout_width="5.0dip"
+            android:layout_height="@dimen/lv_item_view"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:background="@drawable/selected" />
+
+        <ImageView
+            android:id="@id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="12.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15.0dip"
+            android:src="@drawable/more" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:layout_toLeftOf="@id/imageView1"
+            android:text="更多"
+            android:textSize="@dimen/lv_item_lv_ittv" />
+
+        <TextView
+            android:id="@+id/wTV_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginTop="@dimen/lv_item_ittv_marginTop"
+            android:layout_toRightOf="@id/view2"
+            android:text="男性影院"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/lv_item_lv_ittv" />
+    </RelativeLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="5.0dip"
+        android:layout_marginTop="10.0dip">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10.0dip"
+                android:layout_weight="2.0">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/lv_imgView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_networkimageview"
+                    android:layout_marginRight="5.0dip"
+                    android:background="@drawable/recommend_img_default"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/lv_tv1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/lv_imgView1"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignRight="@id/lv_imgView1"
+                    android:background="#a0000000"
+                    android:gravity="center"
+                    android:text="青春有你有我"
+                    android:textColor="#ffffffff"
+                    android:textSize="14.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="1.0">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/lv_imgView2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_networkimageview"
+                    android:layout_marginLeft="5.0dip"
+                    android:background="@drawable/recommend_img_default"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/lv_tv2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/lv_imgView2"
+                    android:layout_alignLeft="@id/lv_imgView2"
+                    android:background="#a0000000"
+                    android:gravity="center"
+                    android:text="青春有你有我"
+                    android:textColor="#ffffffff"
+                    android:textSize="14.0sp" />
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip">
+
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10.0dip"
+                android:layout_weight="1.0">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/lv_imgView3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_networkimageview"
+                    android:layout_marginRight="5.0dip"
+                    android:background="@drawable/recommend_img_default"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/lv_tv3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/lv_imgView3"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignRight="@id/lv_imgView3"
+                    android:background="#a0000000"
+                    android:gravity="center"
+                    android:text="青春有你有我"
+                    android:textColor="#ffffffff"
+                    android:textSize="14.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/lv_imgView4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_networkimageview"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:background="@drawable/recommend_img_default"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/lv_tv4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/lv_imgView4"
+                    android:layout_alignLeft="@id/lv_imgView4"
+                    android:layout_alignRight="@id/lv_imgView4"
+                    android:background="#a0000000"
+                    android:gravity="center"
+                    android:text="青春有你有我"
+                    android:textColor="#ffffffff"
+                    android:textSize="14.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="1.0">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/lv_imgView5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_networkimageview"
+                    android:layout_marginLeft="5.0dip"
+                    android:background="@drawable/recommend_img_default"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/lv_tv5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/lv_imgView5"
+                    android:layout_alignLeft="@id/lv_imgView5"
+                    android:background="#a0000000"
+                    android:gravity="center"
+                    android:text="青春有你有我"
+                    android:textColor="#ffffffff"
+                    android:textSize="14.0sp" />
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip">
+
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10.0dip"
+                android:layout_weight="1.0">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/lv_imgView6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_networkimageview"
+                    android:layout_marginRight="5.0dip"
+                    android:background="@drawable/recommend_img_default"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/lv_tv6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/lv_imgView6"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignRight="@id/lv_imgView6"
+                    android:background="#a0000000"
+                    android:gravity="center"
+                    android:text="青春有你有我"
+                    android:textColor="#ffffffff"
+                    android:textSize="14.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/lv_imgView7"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_networkimageview"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:background="@drawable/recommend_img_default"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/lv_tv7"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/lv_imgView7"
+                    android:layout_alignLeft="@id/lv_imgView7"
+                    android:layout_alignRight="@id/lv_imgView7"
+                    android:background="#a0000000"
+                    android:gravity="center"
+                    android:text="青春有你有我"
+                    android:textColor="#ffffffff"
+                    android:textSize="14.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="1.0">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/lv_imgView8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_networkimageview"
+                    android:layout_marginLeft="5.0dip"
+                    android:background="@drawable/recommend_img_default"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/lv_tv8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/lv_imgView8"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@id/lv_imgView8"
+                    android:background="#a0000000"
+                    android:gravity="center"
+                    android:text="青春有你有我"
+                    android:textColor="#ffffffff"
+                    android:textSize="14.0sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:background="#ffd4d4d4" />
+</LinearLayout>

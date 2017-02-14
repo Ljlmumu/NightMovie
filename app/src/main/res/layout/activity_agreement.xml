@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffd4d4d4"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/main_title"
+        android:background="#ff222222">
+
+        <ImageView
+            android:id="@id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tV"
+            android:layout_alignTop="@id/tV"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:src="@drawable/software_close" />
+
+        <TextView
+            android:id="@id/tV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="用户协议"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/my_title_text" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:background="#ffffffff"
+        android:ems="10"
+        android:maxLines="100"
+        android:padding="5.0dip"
+        android:scrollbars="vertical"
+        android:text="@string/user_protocol"
+        android:textColor="#ff000000"
+        android:textSize="18.0sp" />
+</LinearLayout>

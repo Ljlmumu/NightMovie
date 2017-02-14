@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<!--
+    <SurfaceView
+        android:id="@+id/surfaceView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <RelativeLayout
+        android:id="@+id/relLay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#a0000000"
+        android:orientation="horizontal"
+        android:padding="10.0dip">
+
+        <ImageView
+            android:id="@+id/btnPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/pausexml"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/btnPause"
+            android:src="@drawable/playxml" />
+
+        <TextView
+            android:id="@+id/tV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/btnStart"
+            android:text="00:00" />
+
+        <SeekBar
+            android:id="@+id/skbProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/btnStart"
+            android:layout_toLeftOf="@id/tV2"
+            android:layout_toRightOf="@id/tV"
+            android:max="100"
+            android:maxHeight="5.0dip"
+            android:minHeight="5.0dip"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip"
+            android:thumb="@drawable/seek_thumb" />
+
+        <TextView
+            android:id="@id/tV2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="00:00" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linLay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#a0000000"
+        android:padding="10.0dip">
+
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:src="@drawable/play_imgview_xml" />
+    </LinearLayout>-->
+    <VideoView
+        android:id="@+id/mVideoview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>
