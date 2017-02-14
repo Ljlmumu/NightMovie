@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="yfthirdpay-20170114">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/yfSDK_ThirdPayLib/libs/yfthirdpay-20170114.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
