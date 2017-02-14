@@ -1,0 +1,43 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => yfSDK_ThirdPayLib\src\main\AndroidManifest.xml
+* libs\alipaySdk-20160809.jar => yfSDK_ThirdPayLib\libs\alipaySdk-20160809.jar
+* libs\armeabi\libonlywechat_plugin.so => yfSDK_ThirdPayLib\src\main\jniLibs\armeabi\libonlywechat_plugin.so
+* libs\armeabi\libtm_pay.so => yfSDK_ThirdPayLib\src\main\jniLibs\armeabi\libtm_pay.so
+* libs\banksdk.jar => yfSDK_ThirdPayLib\libs\banksdk.jar
+* libs\ipaynow_onlywechat_v1.4.0.jar => yfSDK_ThirdPayLib\libs\ipaynow_onlywechat_v1.4.0.jar
+* libs\libammsdk.jar => yfSDK_ThirdPayLib\libs\libammsdk.jar
+* libs\tm_pay_sdk_v1.jar => yfSDK_ThirdPayLib\libs\tm_pay_sdk_v1.jar
+* libs\yfthirdpay-20170114.jar => yfSDK_ThirdPayLib\libs\yfthirdpay-20170114.jar
+* lint.xml => yfSDK_ThirdPayLib\lint.xml
+* res\ => yfSDK_ThirdPayLib\src\main\res\
+* src\ => yfSDK_ThirdPayLib\src\main\java
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
