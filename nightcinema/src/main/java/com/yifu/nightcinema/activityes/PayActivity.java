@@ -128,7 +128,8 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
             Contants.VipLevel= 0;
         }
         SpUtil.updateInt(this, SpUtil.VIP_LEVEL, Contants.VipLevel);
-
+        Toast.makeText(PayActivity.this, "支付成功", Toast.LENGTH_SHORT)
+                .show();
     }
 
     /**
@@ -153,8 +154,7 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
 
                 Log.i("PayActivity", "success-orderID=" + orderId_back);
                 TDGAVirtualCurrency.onChargeSuccess(orderId_back);
-                Toast.makeText(PayActivity.this, "支付成功", Toast.LENGTH_SHORT)
-                        .show();
+
             } else {
                // paySuccess();
                 Toast.makeText(PayActivity.this, "支付失败", Toast.LENGTH_SHORT)

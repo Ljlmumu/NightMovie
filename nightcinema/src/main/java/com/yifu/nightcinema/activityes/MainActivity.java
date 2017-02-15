@@ -184,7 +184,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode ==KeyEvent.KEYCODE_BACK ){
-            startActivity(new Intent(this,ExitActivity.class));
+           // startActivity(new Intent(this,ExitActivity.class));
             return true;
         }
         return super.onKeyDown(keyCode,  event);
