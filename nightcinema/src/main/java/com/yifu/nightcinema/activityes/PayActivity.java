@@ -124,6 +124,9 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
 
     public void paySuccess() {
         Contants.VipLevel++;
+        if(Contants.VipLevel>3){
+            Contants.VipLevel= 0;
+        }
         SpUtil.updateInt(this, SpUtil.VIP_LEVEL, Contants.VipLevel);
 
     }
@@ -149,7 +152,6 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
                 paySuccess();
 
                 Log.i("PayActivity", "success-orderID=" + orderId_back);
-             //   String payment = (payType == 0) ? "微信" : "支付宝";
                 TDGAVirtualCurrency.onChargeSuccess(orderId_back);
                 Toast.makeText(PayActivity.this, "支付成功", Toast.LENGTH_SHORT)
                         .show();

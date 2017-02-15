@@ -9,7 +9,21 @@ public class Contants {
     public static final String url_try = "http://php7.qyjuju.com/json2/visitor1.php?pay_Id=dxabwj&package=com.usye.asjye&appid=4";
     public static final String url_adult = "http://php7.qyjuju.com/json2/visitor2.php?pay_Id=dxabwj&package=com.usye.asjye&appid=4&page=";
     public static final String url_wuma = "http://php7.qyjuju.com/json2/visitor3.php?pay_Id=dxabwj&package=com.usye.asjye&appid=4&page=";
-    public static final String url_detail = "http://php7.qyjuju.com/json2/comments.php?id= + Dianying_id";
+    public static final String url_detail = "http://php7.qyjuju.com/json2/comments.php?id=";
+
+    public static final String url_zuanshi = "http://php7.qyjuju.com/json2/gold2.php?pay_Id=dxabwj&package=com.usye.asjye&appid=4&page=";
+    public static final String url_vr = "http://php7.qyjuju.com/json2/vr.php?pay_Id=dxabwj&package=com.usye.asjye&appid=4&page=";
+    /**
+     * 请求的tag
+     */
+    public static final int TAG_VIDEOS = 0;//video列表
+
+
+
+    public static final int TAG_DETAIL = 1;//详情
+
+
+
 
 //    public static boolean isVip = false;
 //    public static boolean isDiamondVip = false;

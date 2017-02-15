@@ -1,12 +1,13 @@
 package com.yifu.nightcinema.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by lijilei on 2017/1/17.
  */
 
-public class ListBean extends BaseBean {
+public class ListBean extends BaseBean implements Serializable {
 
     private List<VideoInfo> list;
     private List<VideoInfo> baners;

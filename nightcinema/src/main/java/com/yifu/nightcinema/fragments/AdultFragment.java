@@ -1,5 +1,6 @@
 package com.yifu.nightcinema.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -7,16 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import com.yifu.nightcinema.R;
+import com.yifu.nightcinema.activityes.DetailActivity;
 import com.yifu.nightcinema.adapter.GridviewAdapter;
 import com.yifu.nightcinema.bean.BaseBean;
 import com.yifu.nightcinema.bean.ListBean;
 import com.yifu.nightcinema.bean.VideoInfo;
-import com.yifu.nightcinema.utils.Contants;
 import com.yifu.nightcinema.net.VolleyUtil;
+import com.yifu.nightcinema.utils.Contants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +36,8 @@ public class AdultFragment extends BaseFragment {
     private int page = 0;
     private GridviewAdapter mGridViewAdapter;
     private int totalPage=10;
-
+private String url;
+    private int vipLevel;
     public AdultFragment() {
     }
 
@@ -44,13 +48,30 @@ public class AdultFragment extends BaseFragment {
         mGridViewAdapter = new GridviewAdapter(activity);
     }
 
+    @Override
+    public void refreshData() {
+        super.refreshData();
+        if (vipLevel != Contants.VipLevel) {
+            page = 0;
+            initData();
+
+        }
+    }
+
     public void initData() {
+        vipLevel = Contants.VipLevel;
+        if(Contants.VipLevel<1){
+            url = Contants.url_adult;
+        }else {
+            url = Contants.url_zuanshi;
+        }
+
         if (page >= totalPage) {
 
             return;
         }
 
-        VolleyUtil.getInstance().getBean(Contants.url_adult + (page+1), new VolleyUtil.OnNetListener<BaseBean>() {
+        VolleyUtil.getInstance().getBean(url + (page+1), new VolleyUtil.OnNetListener<BaseBean>() {
 
             @Override
             public void onSuccess(BaseBean baseBean) {
@@ -91,6 +112,10 @@ public class AdultFragment extends BaseFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initData();
+        setListener();
+    }
+
+    private void setListener() {
         frg_gl_adult.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -114,7 +139,26 @@ public class AdultFragment extends BaseFragment {
 
             }
         });
+
+        frg_gl_adult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startDetail(listGradView.get(position));
+            }
+        });
+
+
     }
 
+    /**
+     * 打开详情界面
+     * @param
+     */
+    private void startDetail(VideoInfo info) {
+        Intent intent = new Intent(activity, DetailActivity.class);
+        intent.putExtra("VideoInfo", info);
+        startActivity(intent);
+
+    }
 
 }

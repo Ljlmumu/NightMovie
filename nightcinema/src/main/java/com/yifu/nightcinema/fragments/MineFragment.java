@@ -77,18 +77,16 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 operation_title.setClickable(false);
                 tv_updata_vip.setVisibility(View.GONE);
                 break;
-            case 4:
-//                level = "黑金会员";
-//                privilege = "永久观看海量电影";
-//                operation_title.setText("您已经是黑金会员");
-//                kefu_explain.setText(getString(R.string.zuanshi_explain));
-                break;
+
+
             default:
                 break;
 
         }
         level_title.setText(level);
         privilege_title.setText(privilege);
+
+
     }
 
     private void initView(View view) {
@@ -102,6 +100,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
         operation_title.setOnClickListener(this);
         user_agreement_layout.setOnClickListener(this);
+
 
     }
 

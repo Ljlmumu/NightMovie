@@ -1,6 +1,8 @@
 package com.yifu.nightcinema.json;
 
 import com.yifu.nightcinema.bean.BaseBean;
+import com.yifu.nightcinema.bean.Comment;
+import com.yifu.nightcinema.bean.DetailBean;
 import com.yifu.nightcinema.bean.ListBean;
 import com.yifu.nightcinema.bean.VideoInfo;
 
@@ -43,7 +45,7 @@ public class JsonPase {
             listBean.setTotalPage(totalPage);
 
             JSONArray top = jsonObject.optJSONArray("top");
-            if(top!=null){
+            if (top != null) {
                 for (int i = 0; i < top.length(); i++) {
                     JSONObject obj = top.optJSONObject(i);
                     String dianying_id = obj.optString("dianying_id");
@@ -57,12 +59,59 @@ public class JsonPase {
             }
 
 
-
             listBean.setBaners(banners);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return  listBean;
+        return listBean;
+    }
+
+    public static BaseBean toDetailBean(String json) {
+
+        DetailBean detailBean = new DetailBean();
+        List<VideoInfo> topvideo = new ArrayList<VideoInfo>();
+        List<Comment> comments = new ArrayList<Comment>();
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(json);
+
+            JSONArray jsonArrayVideos = jsonObject.optJSONArray("top_video");
+            JSONArray jsonArrayComments = jsonObject.optJSONArray("comment");
+
+
+            for (int i = 0; i < jsonArrayVideos.length(); i++) {
+
+                JSONObject obj = jsonArrayVideos.optJSONObject(i);
+                String dianying_id = obj.optString("dianying_id");
+                String pic = obj.optString("pic");
+                String title = obj.optString("title");
+                String video = obj.optString("video");
+                VideoInfo info = new VideoInfo(dianying_id, pic, title, video);
+                topvideo.add(info);
+
+            }
+            for (int i = 0; i < jsonArrayComments.length(); i++) {
+
+                JSONObject obj = jsonArrayComments.optJSONObject(i);
+
+                String avatar = obj.optString("avatar");
+                String content = obj.optString("content");
+                String nickname = obj.optString("nickname");
+                String zan = obj.optString("zan");
+                Comment comment = new Comment(avatar, content, nickname, zan);
+                comments.add(comment);
+
+            }
+            detailBean.setComments(comments);
+            detailBean.setTopvideo(topvideo);
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return detailBean;
+
     }
 }

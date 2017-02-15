@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -64,7 +65,7 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
     private String url;
     private String title;//标题
     private String dialogMessage = "开通会员可观看完整视频";//拖动弹出消息dialog
-    private int PayTime = 8000;//观看多长时间弹出计费，单位毫秒
+    private int PayTime = 5000;//观看多长时间弹出计费，单位毫秒
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,7 +178,9 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
         mOnCompletionListener = new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
+                startPay();
                 PlayerActivity.this.finish();
+
             }
         };
         mOnInfoListener = new MediaPlayer.OnInfoListener() {
@@ -215,8 +218,8 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
                     } else {
                         showDialog();
                     }
-                }else {
-                    if(progress>=PayTime){
+                } else {
+                    if (progress >= PayTime) {
                         startPay();
 
                     }
@@ -285,6 +288,7 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
 
 
         Intent intent = getIntent();
+
         url = intent.getStringExtra("url");
         title = intent.getStringExtra("title");
 //得到屏幕宽高
@@ -318,7 +322,7 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
                 gold_iv_mark3.setImageResource(R.drawable.zuan_mark);
                 gold_iv_mark3.setImageResource(R.drawable.zuan_mark);
                 dialogMessage = "开通钻石会员可观看更多哦！";
-                PayTime = 8000;
+                PayTime = 30000;
                 break;
             case 2:
                 vp_iv_mark1.setImageResource(R.drawable.heijin_mark);
@@ -326,25 +330,19 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
                 gold_iv_mark3.setImageResource(R.drawable.heijin_mark);
                 gold_iv_mark3.setImageResource(R.drawable.heijin_mark);
                 dialogMessage = "开通黑金会员可观看全部高清视频哦！";
-                PayTime = 15000;
+                PayTime = 30000;
                 break;
             case 3:
-                default:
-                    vp_iv_mark1.setVisibility(View.GONE);
-                    vp_iv_mark2.setVisibility(View.GONE);
-                    gold_iv_mark3.setVisibility(View.GONE);
-                    gold_iv_mark4.setVisibility(View.GONE);
+
+                PayTime = 60000;
+                vp_iv_mark1.setVisibility(View.GONE);
+                vp_iv_mark2.setVisibility(View.GONE);
+                gold_iv_mark3.setVisibility(View.GONE);
+                gold_iv_mark4.setVisibility(View.GONE);
+                break;
+            default:
                 break;
         }
-
-
-//        if (Contants.VipLevel >= 3) {
-//            vp_iv_mark1.setVisibility(View.GONE);
-//            vp_iv_mark2.setVisibility(View.GONE);
-//            gold_iv_mark3.setVisibility(View.GONE);
-//            gold_iv_mark4.setVisibility(View.GONE);
-//        }
-
 
 //监听退出
         frame_player_view_back.setOnClickListener(this);
@@ -358,6 +356,7 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
 
             case R.id.frame_player_view_back:
+                startActivity(new Intent(this, ExitActivity.class));
                 this.finish();
                 break;
             case R.id.videoPauseBtn:
@@ -398,9 +397,20 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
             //按钮状态设置-暂停
             videoPauseImg.setBackgroundResource(android.R.drawable.ic_media_pause);
         }
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
     }
 
-
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            startActivity(new Intent(this, ExitActivity.class));
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

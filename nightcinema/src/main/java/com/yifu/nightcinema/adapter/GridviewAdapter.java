@@ -2,6 +2,7 @@ package com.yifu.nightcinema.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,11 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.yifu.nightcinema.R;
-import com.yifu.nightcinema.activityes.PlayerActivity;
 import com.yifu.nightcinema.activityes.VipActivity;
 import com.yifu.nightcinema.bean.VideoInfo;
 import com.yifu.nightcinema.net.VolleyUtil;
-import com.yifu.nightcinema.utils.Contants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,7 @@ import java.util.List;
 
 public class GridviewAdapter extends BaseAdapter {
     private List<VideoInfo> data = new ArrayList<VideoInfo>();
-    private Context context;
+    protected Context context;
 
     public GridviewAdapter() {
     }
@@ -59,6 +58,26 @@ public class GridviewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        convertView = setView(position, convertView);
+//        holder.iv_pic.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(Contants.VipLevel<=0){
+//                    startPay();
+//                }else {
+//                    Intent intent = new Intent(context, PlayerActivity.class);
+//                    intent.putExtra("url", info.getVideo());
+//                    intent.putExtra("title", info.getTitle());
+//                    context.startActivity(intent);
+//                }
+//            }
+//        });
+
+        return convertView;
+    }
+
+    @NonNull
+    protected View setView(int position, View convertView) {
         ViewHolder holder = null;
         final VideoInfo info = data.get(position);
         if (convertView != null) {
@@ -74,22 +93,9 @@ public class GridviewAdapter extends BaseAdapter {
         }
         VolleyUtil.getInstance().showImage(info.getPic(), holder.iv_pic);
         holder.tv_title.setText(info.getTitle());
-        holder.iv_pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(Contants.VipLevel<=0){
-                    startPay();
-                }else {
-                    Intent intent = new Intent(context, PlayerActivity.class);
-                    intent.putExtra("url", info.getVideo());
-                    intent.putExtra("title", info.getTitle());
-                    context.startActivity(intent);
-                }
-            }
-        });
-
         return convertView;
     }
+
 
     private void startPay() {
         Intent intent = new Intent(context, VipActivity.class);

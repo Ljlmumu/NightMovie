@@ -1,5 +1,6 @@
 package com.yifu.nightcinema.fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,10 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import com.yifu.nightcinema.R;
+import com.yifu.nightcinema.activityes.DetailActivity;
 import com.yifu.nightcinema.adapter.GridviewAdapter;
 import com.yifu.nightcinema.bean.BaseBean;
 import com.yifu.nightcinema.bean.ListBean;
@@ -34,11 +37,14 @@ public class WumaFragment extends BaseFragment {
 
     private int page = 0;
     private GridviewAdapter mGridViewAdapter;
-    private int totalPage=10;
+    private int totalPage = 10;
+    private String url;
+
+    private int vipLevel;
+
     public WumaFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
@@ -52,6 +58,8 @@ public class WumaFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_wuma, container, false);
         frg_gl_wuma = (GridView) view.findViewById(R.id.frg_gl_wuma);
+
+
         return view;
     }
 
@@ -82,16 +90,59 @@ public class WumaFragment extends BaseFragment {
 
             }
         });
+//设置条目点击的监听
+        frg_gl_wuma.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startDetail(listGradView.get(position));
+            }
+        });
     }
 
+    /**
+     * 打开详情界面
+     * @param
+     */
 
+    private void startDetail(VideoInfo info) {
+        Intent intent = new Intent(activity, DetailActivity.class);
+        intent.putExtra("VideoInfo", info);
+        startActivity(intent);
+
+    }
+
+    /**
+     * 刷新数据
+     */
+    @Override
+    public void refreshData() {
+        super.refreshData();
+        if (vipLevel != Contants.VipLevel) {
+            page = 0;
+            initData();
+
+        }
+    }
 
     private void initData() {
+
+
+        vipLevel = Contants.VipLevel;
+        if (Contants.VipLevel < 1) {
+
+            url = Contants.url_wuma;
+        } else {
+            url = Contants.url_vr;
+        }
         if (page >= totalPage) {
 
             return;
         }
-        VolleyUtil.getInstance().getBean(Contants.url_wuma+(page+1), new VolleyUtil.OnNetListener<BaseBean>() {
+
+
+         // 请求数据
+
+        VolleyUtil.getInstance().getBean(url + (page + 1), new VolleyUtil.OnNetListener<BaseBean>() {
 
 
             @Override
@@ -121,12 +172,15 @@ public class WumaFragment extends BaseFragment {
         });
     }
 
+    /**
+     * 没用到
+     * @param uri
+     */
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
     }
-
 
 
 }

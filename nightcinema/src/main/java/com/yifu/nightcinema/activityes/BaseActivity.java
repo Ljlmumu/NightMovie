@@ -73,5 +73,8 @@ public class BaseActivity extends AppCompatActivity {
     protected void initData() {
     }
 
-
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+    }
 }

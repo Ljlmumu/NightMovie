@@ -14,6 +14,7 @@ import com.android.volley.toolbox.Volley;
 import com.yifu.nightcinema.R;
 import com.yifu.nightcinema.bean.BaseBean;
 import com.yifu.nightcinema.json.JsonPase;
+import com.yifu.nightcinema.utils.Contants;
 
 /**
  * Created by lijilei on 2017/1/17.
@@ -80,14 +81,25 @@ public class VolleyUtil {
      * @param url
      * @param listener
      */
-    public void getBean(final String url, final OnNetListener<BaseBean> listener) {
+    public void getBean(final int tag,final String url, final OnNetListener<BaseBean> listener) {
 
-        JsonCatchRequest josnRequest = new JsonCatchRequest(Request.Method.GET, url, null, new Response.Listener<String>() {
+        JsonCatchRequest josnRequest = new JsonCatchRequest(Request.Method.GET,url, null, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String s) {
                 Log.e(TAG, s);
-                BaseBean listBean = JsonPase.toBean(s);
+
+                BaseBean listBean = null;
+               switch (tag){
+                   case Contants.TAG_VIDEOS:
+                       listBean = JsonPase.toBean(s);
+                       break;
+                   case Contants.TAG_DETAIL:
+                       listBean = JsonPase.toDetailBean(s);
+                       break;
+                   default:
+                       break;
+               }
                 listener.onSuccess(listBean);
 
             }
@@ -98,13 +110,19 @@ public class VolleyUtil {
                 listener.onFail();
             }
         });
-        josnRequest.setTag(url);
+
+        josnRequest.setTag(tag);
         josnRequest.setShouldCache(true);
 
 
         mQueue.add(josnRequest);
     }
 
+
+    public void getBean(final String url, final OnNetListener<BaseBean> listener) {
+        getBean(Contants.TAG_VIDEOS,url,listener);
+
+    }
     /**
      * 图片加载（带内存缓存），用于图片比较多的
      *
@@ -121,6 +139,8 @@ public class VolleyUtil {
                 R.drawable.icon_empty, R.drawable.icon_error);
         imageLoader.get(url, listener);
     }
+
+
 
     /**
      * 请求结果的回调接口

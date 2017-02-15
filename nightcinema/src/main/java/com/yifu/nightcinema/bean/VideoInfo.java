@@ -1,10 +1,12 @@
 package com.yifu.nightcinema.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by lijilei on 2017/1/17.
  */
 
-public class VideoInfo {
+public class VideoInfo implements Serializable {
 
         private String dianying_id;
         private String pic;

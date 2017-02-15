@@ -1,5 +1,6 @@
 package com.yifu.nightcinema.fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,10 +8,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.yifu.nightcinema.R;
+import com.yifu.nightcinema.activityes.PlayerActivity;
+import com.yifu.nightcinema.activityes.VipActivity;
 import com.yifu.nightcinema.adapter.GridviewAdapter;
 import com.yifu.nightcinema.bean.BaseBean;
 import com.yifu.nightcinema.bean.ListBean;
@@ -38,12 +42,11 @@ public class TryFragment extends BaseFragment {
     }
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d(TAG,"onCreate");
+        Log.d(TAG, "onCreate");
     }
 
     private void initData() {
@@ -55,8 +58,8 @@ public class TryFragment extends BaseFragment {
                 if (listBean.getList().size() != 0 || listBean.getBaners().size() != 0) {
                     listGradView = listBean.getList();
                     listBanner = listBean.getBaners();
-                    Log.i(TAG,listGradView.size()+"");
-                    frg_gl_try.setAdapter(new GridviewAdapter(activity,listGradView));
+                    Log.i(TAG, listGradView.size() + "");
+                    frg_gl_try.setAdapter(new GridviewAdapter(activity, listGradView));
                     initialize();
                 } else {
                     Toast.makeText(activity, "获取数据失败！", Toast.LENGTH_SHORT).show();
@@ -81,11 +84,16 @@ public class TryFragment extends BaseFragment {
     }
 
     private void initView(View v) {
-
         frg_gl_try = (ScrollGridView) v.findViewById(R.id.frg_gl_try);
-//        initBanner();
-
-
+        frg_gl_try.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(activity,PlayerActivity.class);
+                intent.putExtra("url",listGradView.get(position).getVideo());
+                intent.putExtra("title",listGradView.get(position).getTitle());
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -95,7 +103,6 @@ public class TryFragment extends BaseFragment {
         initData();
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -140,14 +147,21 @@ public class TryFragment extends BaseFragment {
         @Override
         public void onImageClick(VideoInfo info, int position, View imageView) {
             if (cycleViewPager.isCycle()) {
-                position = position - 1;
-                Toast.makeText(activity,
-                         info.getTitle(), Toast.LENGTH_SHORT)
-                        .show();
+
+                if (Contants.VipLevel < 1) {
+                    startActivity(new Intent(activity, VipActivity.class));
+
+                }else{
+                    Intent intent = new Intent(activity, PlayerActivity.class);
+                    intent.putExtra("url", info.getVideo());
+                    intent.putExtra("title", info.getTitle());
+                    activity.startActivity(intent);
+                }
             }
 
         }
 
     };
+
 
 }

@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StrikethroughSpan;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yifu.nightcinema.R;
 import com.yifu.nightcinema.utils.Contants;
@@ -83,13 +85,20 @@ public class VipActivity extends Activity implements View.OnClickListener {
                 pay_member_bg.setBackgroundResource(R.drawable.p_top3);
                 break;
             case 3:
+                fee = 39;
+                showfee = "￥39";
+                del_fee = "￥78";
+                tip = "开通永久会员";
+              shuoming = "观看试看区视频权限";
+                pay_member_bg.setBackgroundResource(R.drawable.p_top1);
+                break;
             default:
-                fee = 45;
-                showfee = "￥45";
-                del_fee = "￥90";
-                shuoming = "观看成人无码高清视频";
-                tip = "开通黑金会员";
-                pay_member_bg.setBackgroundResource(R.drawable.p_top3);
+                fee = 39;
+                showfee = "￥39";
+                del_fee = "￥78";
+                tip = "开通永久会员";
+                shuoming = "观看试看区视频权限";
+                pay_member_bg.setBackgroundResource(R.drawable.p_top1);
                 break;
         }
         msp = new SpannableString(del_fee);
@@ -98,6 +107,7 @@ public class VipActivity extends Activity implements View.OnClickListener {
         tv_price.setText(showfee);
         tv_tip.setText(tip);
         tv_shuoming.setText(shuoming);
+        Toast.makeText(this,"需要"+tip+"才能观看VIP视频",Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -110,11 +120,23 @@ public class VipActivity extends Activity implements View.OnClickListener {
                 finish();
                 break;
             case R.id.member_close:
+                startActivity(new Intent(this,ExitActivity.class));
                 finish();
+
+
                 break;
             default:
                 break;
 
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode ==KeyEvent.KEYCODE_BACK ){
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 }

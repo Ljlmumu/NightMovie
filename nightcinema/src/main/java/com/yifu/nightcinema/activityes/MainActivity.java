@@ -19,6 +19,7 @@ import com.yifu.nightcinema.fragments.BaseFragment;
 import com.yifu.nightcinema.fragments.MineFragment;
 import com.yifu.nightcinema.fragments.TryFragment;
 import com.yifu.nightcinema.fragments.WumaFragment;
+import com.yifu.nightcinema.utils.Contants;
 
 public class MainActivity extends BaseActivity implements BaseFragment.OnFragmentInteractionListener {
     private final String TAG = "MainActivity";
@@ -63,21 +64,24 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
         rb_adult = (RadioButton) findViewById(R.id.rb_adult);
         rb_wuma = (RadioButton) findViewById(R.id.rb_wuma);
         rb_mine = (RadioButton) findViewById(R.id.rb_mine);
+        setRadioDrawable();
+
+
         rb_try.setChecked(true);
-
-
         stateCheck(savedInstanceState);
-
         rg_main.setOnCheckedChangeListener(new MyOnRadioChangeListener());
 
     }
 
-//    private void replaceFragment(Fragment fragment) {
-//        manager = getSupportFragmentManager();
-//        FragmentTransaction transaction = manager.beginTransaction();
-//        transaction.replace(R.id.fl_Contains, fragment);
-//        transaction.commit();
-//    }
+    private void setRadioDrawable() {
+        if(Contants.VipLevel>0){
+            rb_try.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.rb_gold,0,0);
+            rb_adult.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.rb_zuanshi,0,0);
+            rb_wuma.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.rb_vr,0,0);
+        }
+    }
+
+
     private void stateCheck(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             showFragment();
@@ -125,31 +129,48 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
             Log.d(TAG,"checkedId="+checkedId);
             switch (checkedId) {
                 case R.id.rb_try:
-//                    mTryFragent = new TryFragment();
                     Log.e(TAG, "mTryFragment");
                     setTitleName("体验区");
+                    if(Contants.VipLevel>0){
+                        setTitleName("黄金区");
+                    }
                     getSupportFragmentManager().beginTransaction().show(mTryFragment).hide(mAdultFragment).hide(mWumaFragment)
                             .hide(mMineFragment).commit();
                     break;
                 case R.id.rb_adult:
                     Log.e(TAG, "mAdultFragment");
+                    if (Contants.VipLevel < 2) {
+                        startActivity(new Intent(MainActivity.this, VipActivity.class));
+                        rb_try.setChecked(true);
+                        return;
+                    }
+
                     setTitleName("成人区");
-//                    mAdultFragment = new AdultFragment();
+                    if(Contants.VipLevel>0){
+                        setTitleName("钻石区");
+                    }
                     getSupportFragmentManager().beginTransaction().show(mAdultFragment).hide(mTryFragment).hide(mWumaFragment)
                             .hide(mMineFragment).commit();
                     break;
                 case R.id.rb_wuma:
+                    if (Contants.VipLevel < 2) {
+                        startActivity(new Intent(MainActivity.this, VipActivity.class));
+                        rb_try.setChecked(true);
+                        return;
+                    }
                     setTitleName("无码区");
+                    if(Contants.VipLevel>0){
+                        setTitleName("VR区");
+                    }
                     getSupportFragmentManager().beginTransaction().show(mWumaFragment).hide(mTryFragment).hide(mAdultFragment)
                             .hide(mMineFragment).commit();
-//                    mWumaFragment = new WumaFragment();
                     break;
                 case R.id.rb_mine:
                     Log.e(TAG, "mWumaFragment");
                     setTitleName("我的");
+
                     getSupportFragmentManager().beginTransaction().show(mMineFragment).hide(mAdultFragment).hide(mWumaFragment)
                             .hide(mTryFragment).commit();
-//                    mMineFragment = new MineFragment();
                     break;
                 default:
                     break;
@@ -178,13 +199,19 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
 
     }
 
+    /**
+     * 刷新页面
+     */
     @Override
     protected void onResume() {
         super.onResume();
+        setRadioDrawable();
         FragmentManager  manager = getSupportFragmentManager();
-//        FragmentTransaction fts = manager.beginTransaction();
-        BaseFragment fragment = (BaseFragment) manager.findFragmentByTag(tags[3]);
-        if(fragment==null)return;
-        fragment.refreshData();
+        for(int i=0;i<tags.length;i++){
+            BaseFragment fragment = (BaseFragment) manager.findFragmentByTag(tags[i]);
+            if(fragment==null)continue;
+            fragment.refreshData();
+        }
+
     }
 }
