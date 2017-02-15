@@ -1,6 +1,5 @@
 package com.yifu.nightcinema.activityes;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -139,11 +138,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
                     break;
                 case R.id.rb_adult:
                     Log.e(TAG, "mAdultFragment");
-                    if (Contants.VipLevel < 2) {
-                        startActivity(new Intent(MainActivity.this, VipActivity.class));
-                        rb_try.setChecked(true);
-                        return;
-                    }
+
 
                     setTitleName("成人区");
                     if(Contants.VipLevel>0){
@@ -153,11 +148,7 @@ public class MainActivity extends BaseActivity implements BaseFragment.OnFragmen
                             .hide(mMineFragment).commit();
                     break;
                 case R.id.rb_wuma:
-                    if (Contants.VipLevel < 2) {
-                        startActivity(new Intent(MainActivity.this, VipActivity.class));
-                        rb_try.setChecked(true);
-                        return;
-                    }
+
                     setTitleName("无码区");
                     if(Contants.VipLevel>0){
                         setTitleName("VR区");

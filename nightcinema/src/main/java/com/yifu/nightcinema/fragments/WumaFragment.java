@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.yifu.nightcinema.R;
 import com.yifu.nightcinema.activityes.DetailActivity;
+import com.yifu.nightcinema.activityes.VipActivity;
 import com.yifu.nightcinema.adapter.GridviewAdapter;
 import com.yifu.nightcinema.bean.BaseBean;
 import com.yifu.nightcinema.bean.ListBean;
@@ -94,11 +95,21 @@ public class WumaFragment extends BaseFragment {
         frg_gl_wuma.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startDetail(listGradView.get(position));
+
+                if (Contants.VipLevel < 2) {
+                    startVip();
+
+                }else{
+                    startDetail(listGradView.get(position));
+                }
+
+
             }
         });
     }
-
+    private void startVip() {
+        startActivity(new Intent(activity, VipActivity.class));
+    }
     /**
      * 打开详情界面
      * @param

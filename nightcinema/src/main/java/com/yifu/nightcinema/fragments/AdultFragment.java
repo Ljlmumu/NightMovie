@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.yifu.nightcinema.R;
 import com.yifu.nightcinema.activityes.DetailActivity;
+import com.yifu.nightcinema.activityes.VipActivity;
 import com.yifu.nightcinema.adapter.GridviewAdapter;
 import com.yifu.nightcinema.bean.BaseBean;
 import com.yifu.nightcinema.bean.ListBean;
@@ -143,11 +144,21 @@ private String url;
         frg_gl_adult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startDetail(listGradView.get(position));
+                if (Contants.VipLevel < 2) {
+                    startVip();
+
+                }else{
+                    startDetail(listGradView.get(position));
+                }
+
             }
         });
 
 
+    }
+
+    private void startVip() {
+        startActivity(new Intent(activity, VipActivity.class));
     }
 
     /**

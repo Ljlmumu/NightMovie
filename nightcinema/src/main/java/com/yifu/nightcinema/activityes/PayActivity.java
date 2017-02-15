@@ -154,7 +154,7 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
 
                 Log.i("PayActivity", "success-orderID=" + orderId_back);
                 TDGAVirtualCurrency.onChargeSuccess(orderId_back);
-
+finish();
             } else {
                // paySuccess();
                 Toast.makeText(PayActivity.this, "支付失败", Toast.LENGTH_SHORT)
