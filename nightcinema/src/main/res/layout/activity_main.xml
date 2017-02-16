@@ -46,8 +46,7 @@
         android:background="@color/bottomColor"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="3dp"
-        android:weightSum="4">
+        android:padding="3dp">
 
         <RadioButton
             android:id="@+id/rb_try"
@@ -55,7 +54,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:button="@null"
-
             android:drawablePadding="-15dp"
             android:drawableTop="@drawable/rb_try"
             android:gravity="center"
@@ -92,5 +90,5 @@
             android:drawableTop="@drawable/rb_mine"
             android:gravity="center" />
     </RadioGroup>
-    >
+
 </LinearLayout>

@@ -279,9 +279,10 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
     }
 
     private void startPay() {
-        this.finish();
+
         Intent intent = new Intent(this, VipActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     private void initData() {
@@ -315,7 +316,14 @@ public class PlayerActivity extends Activity implements View.OnClickListener {
 
 
         switch (Contants.VipLevel) {
-
+            case 0:
+                dialogMessage = "开通永久会员可观看更多哦！";
+                PayTime = 10000;
+                vp_iv_mark1.setImageResource(R.drawable.watermark);
+                vp_iv_mark2.setImageResource(R.drawable.watermark);
+                gold_iv_mark3.setImageResource(R.drawable.watermark);
+                gold_iv_mark3.setImageResource(R.drawable.watermark);
+                break;
             case 1:
                 vp_iv_mark1.setImageResource(R.drawable.zuan_mark);
                 vp_iv_mark2.setImageResource(R.drawable.zuan_mark);

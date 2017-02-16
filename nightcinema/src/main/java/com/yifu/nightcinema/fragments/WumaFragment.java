@@ -26,11 +26,10 @@ import com.yifu.nightcinema.utils.Contants;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
+import static com.android.volley.VolleyLog.TAG;
 
 
 public class WumaFragment extends BaseFragment {
-
 
     private OnFragmentInteractionListener mListener;
     private GridView frg_gl_wuma;
@@ -95,15 +94,7 @@ public class WumaFragment extends BaseFragment {
         frg_gl_wuma.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                if (Contants.VipLevel < 2) {
-                    startVip();
-
-                }else{
                     startDetail(listGradView.get(position));
-                }
-
-
             }
         });
     }

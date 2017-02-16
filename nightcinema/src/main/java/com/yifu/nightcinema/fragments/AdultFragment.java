@@ -144,12 +144,9 @@ private String url;
         frg_gl_adult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (Contants.VipLevel < 2) {
-                    startVip();
 
-                }else{
                     startDetail(listGradView.get(position));
-                }
+
 
             }
         });

@@ -127,12 +127,11 @@ public class DetailActivity extends BaseActivity implements View.OnClickListener
                 showPayDialog();
                 break;
             case R.id.comment_iv_playvideo:
-                if(Contants.VipLevel==3){
+                if(Contants.VipLevel>=3){
                     startPlayer();
                 }else {
                     startPay();
                 }
-
                 break;
         }
     }

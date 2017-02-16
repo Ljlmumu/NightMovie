@@ -106,7 +106,7 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
                 if (isChecked) {
                     payType = 0;
                     rb_zhjifubao.setChecked(false);
-                    //rb_weixin.setChecked(true);
+
 
                 }
 
@@ -115,7 +115,7 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
                 if (isChecked) {
                     payType = 1;
                     rb_weixin.setChecked(false);
-                    //rb_zhjifubao.setChecked(true);
+
                 }
                 break;
         }
@@ -123,9 +123,8 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
 
 
     public void paySuccess() {
-        Contants.VipLevel++;
-        if(Contants.VipLevel>3){
-            Contants.VipLevel= 0;
+        if (++Contants.VipLevel > 3) {
+            Contants.VipLevel = 0;
         }
         SpUtil.updateInt(this, SpUtil.VIP_LEVEL, Contants.VipLevel);
         Toast.makeText(PayActivity.this, "支付成功", Toast.LENGTH_SHORT)
@@ -154,9 +153,9 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
 
                 Log.i("PayActivity", "success-orderID=" + orderId_back);
                 TDGAVirtualCurrency.onChargeSuccess(orderId_back);
-finish();
+                finish();
             } else {
-               // paySuccess();
+                //  paySuccess();
                 Toast.makeText(PayActivity.this, "支付失败", Toast.LENGTH_SHORT)
                         .show();
 

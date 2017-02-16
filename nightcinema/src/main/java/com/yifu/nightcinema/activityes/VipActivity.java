@@ -114,16 +114,17 @@ public class VipActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_goPay:
-                if(Contants.VipLevel==0||Contants.VipLevel==3){
                     Intent intent = new Intent(this, PayActivity.class);
                     intent.putExtra("fee", fee);
                     startActivity(intent);
-                }
 
-                finish();
+              finish();
                 break;
             case R.id.member_close:
+                if(Contants.VipLevel==0||Contants.VipLevel==3){
+
                 startActivity(new Intent(this,ExitActivity.class));
+                }
                 finish();
 
 
