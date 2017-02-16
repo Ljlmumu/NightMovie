@@ -4,11 +4,17 @@
     android:layout_height="fill_parent">
 
 
-    <ImageView
+  <!--  <ImageView
         android:id="@id/imageView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@drawable/start_loading"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY" />-->
+
+    <com.yifu.nightcinema.view.VideoView
+        android:id="@+id/video_view_splashing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 </RelativeLayout>

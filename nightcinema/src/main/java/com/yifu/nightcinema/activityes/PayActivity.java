@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.tendcloud.tenddata.TDGAVirtualCurrency;
 import com.yifu.nightcinema.R;
 import com.yifu.nightcinema.utils.Contants;

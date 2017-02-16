@@ -65,31 +65,33 @@ public class VipActivity extends Activity implements View.OnClickListener {
                 fee = 39;
                 showfee = "￥39";
                 del_fee = "￥78";
+                tip = "开通永久会员";
+               shuoming = "海量成人视频永久观看权限";
                 pay_member_bg.setBackgroundResource(R.drawable.p_top1);
                 break;
             case 1:
                 fee = 30;
                 showfee = "￥30";
                 del_fee = "￥60";
-                shuoming = "观看成人无码高清视频权限";
+                shuoming = "海量激情视频永久观看权限";
                 tip = "开通钻石会员";
                 pay_member_bg.setBackgroundResource(R.drawable.p_top2);
 
                 break;
             case 2:
-                fee = 45;
-                showfee = "￥45";
-                del_fee = "￥90";
-                shuoming = "全部海量高清视频永久观看权限";
-                tip = "开通黑金会员";
+                fee = 38;
+                showfee = "￥38";
+                del_fee = "￥76";
+                shuoming = "全海量超长成人视频观看权限";
+                tip = "开通黄金会员";
                 pay_member_bg.setBackgroundResource(R.drawable.p_top3);
                 break;
             case 3:
-                fee = 39;
-                showfee = "￥39";
-                del_fee = "￥78";
-                tip = "开通永久会员";
-              shuoming = "观看试看区视频权限";
+                fee = 20;
+                showfee = "￥20";
+                del_fee = "￥40";
+                tip = "解锁所有视频";
+              shuoming = "最后一步解锁全部视频";
                 pay_member_bg.setBackgroundResource(R.drawable.p_top1);
                 break;
             default:
