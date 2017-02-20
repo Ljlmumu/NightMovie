@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StrikethroughSpan;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,7 +26,7 @@ public class VipActivity extends Activity implements View.OnClickListener {
     private TextView tv_shuoming;
 
     int fee = 39;
-    String showfee  = "￥39";
+    String showfee = "￥39";
     String del_fee = "￥78";
     String tip = "开通永久会员";
     String shuoming = "观看试看区视频权限";
@@ -66,7 +65,7 @@ public class VipActivity extends Activity implements View.OnClickListener {
                 showfee = "￥39";
                 del_fee = "￥78";
                 tip = "开通永久会员";
-               shuoming = "海量成人视频永久观看权限";
+                shuoming = "海量成人视频永久观看权限";
                 pay_member_bg.setBackgroundResource(R.drawable.p_top1);
                 break;
             case 1:
@@ -91,7 +90,7 @@ public class VipActivity extends Activity implements View.OnClickListener {
                 showfee = "￥20";
                 del_fee = "￥40";
                 tip = "解锁所有视频";
-              shuoming = "最后一步解锁全部视频";
+                shuoming = "最后一步解锁全部视频";
                 pay_member_bg.setBackgroundResource(R.drawable.p_top1);
                 break;
             default:
@@ -109,23 +108,23 @@ public class VipActivity extends Activity implements View.OnClickListener {
         tv_price.setText(showfee);
         tv_tip.setText(tip);
         tv_shuoming.setText(shuoming);
-        Toast.makeText(this,"需要"+tip+"才能观看VIP视频",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "需要" + tip + "才能观看VIP视频", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_goPay:
-                    Intent intent = new Intent(this, PayActivity.class);
-                    intent.putExtra("fee", fee);
-                    startActivity(intent);
+                Intent intent = new Intent(this, PayActivity.class);
+                intent.putExtra("fee", fee);
+                startActivity(intent);
 
-              finish();
+                finish();
                 break;
             case R.id.member_close:
-                if(Contants.VipLevel==0||Contants.VipLevel==3){
+                if (Contants.VipLevel == 0 || Contants.VipLevel == 3) {
 
-                startActivity(new Intent(this,ExitActivity.class));
+                    startActivity(new Intent(this, ExitActivity.class));
                 }
                 finish();
 
@@ -137,12 +136,12 @@ public class VipActivity extends Activity implements View.OnClickListener {
         }
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode ==KeyEvent.KEYCODE_BACK ){
-            return true;
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if(keyCode ==KeyEvent.KEYCODE_BACK ){
+//            return true;
+//        }
+//
+//        return super.onKeyDown(keyCode, event);
+//    }
 }

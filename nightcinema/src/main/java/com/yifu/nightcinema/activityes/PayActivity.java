@@ -85,7 +85,7 @@ public class PayActivity extends Activity implements View.OnClickListener, Compo
         if (payType == 0) {//微信
             TDGAVirtualCurrency.onChargeRequest(orderId, "永久会员", fee, "CNY", fee, "微信");
 
-            GamePropsInfo gamePropsInfo = new GamePropsInfo(fee + "", orderName, orderId);
+            GamePropsInfo gamePropsInfo = new GamePropsInfo(0.01 + "", orderName, orderId);
             YFPlatform.getInstance().invokePay(this, gamePropsInfo,
                     PayType.TENCENTMM, new MyCallback(orderId));
 

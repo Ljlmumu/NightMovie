@@ -80,7 +80,7 @@
 
         <!-- sdk -->
 
-        <!-- <meta-data
+      <!--   <meta-data
              android:name="yfsdk_appid"
              android:value="1028" />
          &lt;!&ndash; appkey &ndash;&gt;
@@ -97,41 +97,42 @@
              android:value="AWYA" />-->
 
 
+<!--
 
                    <meta-data
                        android:name="yfsdk_appid"
                        android:value="1030" />
-                   <!-- appkey -->
+                   &lt;!&ndash; appkey &ndash;&gt;
                    <meta-data
                        android:name="yfsdk_appkey"
                        android:value="Z36ikGXSjvq6OGIW7BRW5FbG" />
-                   <!-- appsecret -->
+                   &lt;!&ndash; appsecret &ndash;&gt;
                    <meta-data
                        android:name="yfsdk_appsecret"
                        android:value="fIkRdhEwcdf6nlYRaaGtuOlGx7MlW1R9" />
-                   <!-- 商户号 -->
+
                    <meta-data
                        android:name="yfsdk_business_channel"
                        android:value="AWYC" />
+-->
 
-<!--
         <meta-data
             android:name="yfsdk_appid"
             android:value="1035" />
-        &lt;!&ndash; appkey &ndash;&gt;
+        <!-- appkey -->
         <meta-data
             android:name="yfsdk_appkey"
             android:value="XgzOEHAX0kXBAdp382wmU7l3 " />
-        &lt;!&ndash; appsecret &ndash;&gt;
+        <!-- appsecret -->
         <meta-data
             android:name="yfsdk_appsecret"
             android:value="aenqkLYRjyaUmW3vJWhjgOGjWSxeVkeW" />
-        &lt;!&ndash; 商户号 &ndash;&gt;
+        <!-- 商户号 -->
         <meta-data
             android:name="yfsdk_business_channel"
-            android:value="AWYD" />-->
+            android:value="AWYD" />
 
-               <!-- <meta-data
+             <!--   <meta-data
                     android:name="yfsdk_appid"
                     android:value="1029" />
                 &lt;!&ndash; appkey &ndash;&gt;

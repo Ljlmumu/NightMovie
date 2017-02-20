@@ -31,7 +31,7 @@ import static android.content.ContentValues.TAG;
 public class AdultFragment extends BaseFragment {
     // TODO: Rename parameter arguments, choose names that match
 
-    private OnFragmentInteractionListener mListener;
+
     private GridView frg_gl_adult;
     public List<VideoInfo> listGradView = new ArrayList<VideoInfo>();
     private int page = 0;
