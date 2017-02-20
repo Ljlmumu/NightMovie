@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="InAppPayLib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/InAppPayLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

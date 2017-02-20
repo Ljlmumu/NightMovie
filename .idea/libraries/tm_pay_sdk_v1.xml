@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tm_pay_sdk_v1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/yfSDK_ThirdPayLib/libs/tm_pay_sdk_v1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
